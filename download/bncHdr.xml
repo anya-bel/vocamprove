@@ -1,0 +1,3069 @@
+<?xml version="1.0"?>
+<teiHeader>
+  <fileDesc>
+<titleStmt>
+<title>
+BNC-Baby: a sampling of the British National Corpus
+</title>
+<respStmt>
+<resp>
+Selection, design, distribution</resp>
+<name>Research Technologies Service, Oxford University</name>
+</respStmt>
+<respStmt>
+<resp>
+Creation of original BNC
+</resp>
+<name>
+BNC Consortium (OUP, Longman, UCREL, OUCS, Chambers)
+</name>
+</respStmt>
+</titleStmt>
+<editionStmt n="2.0">
+<edition>Second Edition</edition>
+</editionStmt>
+<extent>Approximately four million words
+</extent>
+<publicationStmt>
+<distributor>
+Oxford University Computing Services
+</distributor>
+<address>
+<addrLine>13 Banbury Road, Oxford OX2 6NN U.K.</addrLine>
+<addrLine>Telephone:     +44 1865 273221</addrLine>
+<addrLine>Facsimile:     +44 1865 273275</addrLine>
+<addrLine>Internet mail: natcorp@oucs.ox.ac.uk</addrLine>
+</address>
+<idno type="BNC">BNC-B</idno>
+ <availability>
+        <para>This version of the British National Corpus is licenced for distribution by Oxford
+University Computing Services. Each copy of the corpus must include a copy of
+this corpus header and of the standard licence agreement. Any redistribution or
+republishing of the corpus texts (the "BNC Processed Material") is strictly
+forbidden.</para>
+        <para>For information, the conditions of the Standard License Agreement are as
+follows.</para>
+        <para>(a) The BNC Consortium grants according to the terms and conditions
+set out herein and in consideration of the payments specified herein
+a non-exclusive, non-transferable Licence to the Licensee to use the
+BNC Processed Material for the purposes of linguistic research
+and/or the development of language products.</para>
+        <para>(b) Distribution of the BNC Processed Material is restricted to the
+Licensee or in the event of the Licensee being an organisation, to
+the Licensee's research group. This group is defined as consisting
+only of those Licensee's employees whom the Licensee authorises to
+perform the work using the BNC Processed Material for the purposes
+described in paragraph (a).</para>
+        <para>(c) Members of the said research group must not, except as herein
+provided, copy, publish or otherwise give to any third party access
+to the whole or any part of the BNC Processed Material. It is the
+responsibility of the Licensee to ensure that the members of the
+said research group understand and abide by this restriction, and to
+supervise their activities with respect to the BNC Processed
+Material. Neither the Licensee nor members of the Licensee's said
+research group may assign, transfer, lease, sell, rent, charge or
+otherwise encumber the BNC Processed Material.</para>
+        <para>(d) The BNC Processed Material may be installed at the place or places
+of work of the said research group. The place of work is defined as
+the computing systems that the members of a research group normally
+use to conduct their research activities. It can include both work
+and home computers, and is not restricted to a particular machine or
+building.</para>
+        <para>(e) Copies of the BNC Processed Material may be made for backup
+purposes, or for the purposes of making data available to members of
+the research group but the Licensee shall ensure that the BNC
+Consortium's copyright notice is reproduced on all copies or parts
+thereof of the BNC Processed Material. Any such copies will be
+deemed to be part of the BNC Processed Material.</para>
+        <para>(f) There is no restriction on the use of the Licensee's Results
+except that the Licensee may not publish in print or electronic form
+or exploit commercially in any form whatsoever any extracts from the
+BNC Processed Material other than as permitted under the provisions
+of the relevant copyright laws. </para>
+        <para>(g) The BNC Consortium does not grant to the Licensee any rights
+whatsoever to reproduce the BNC Texts or use all or any part of the
+BNC Texts in commercial products or services in any way other than
+would be permitted under the fair dealings provision of copyright
+law.</para>
+      </availability>
+      <date value="2008-03-15">15 March 2008</date>
+    </publicationStmt>
+    <sourceDesc>
+      <para>
+The British National Corpus has no single source document. For details of the
+source or sources used in the creation of each electronic text, see the individual
+text headers. The principles and practices underlying selection and design of the
+corpus are documented in the BNC User Reference Guide, a copy of which should be
+supplied with it.</para>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <projectDesc>
+      <para>The British National Corpus (BNC) Consortium was formed in 1990, and
+started work in 1991 on the three-year task of producing a
+hundred-million word corpus of modern British English for use in
+commercial and academic research. The first edition was published in
+1994.</para>
+      <para>A second edition (the World Edition) was produced during between 1998
+and 2000. It contains a thorough revision of the part of speech tagging,
+several corrections to the headers, and some minor revision of the SGML
+tagging used.</para>
+      <para>This edition is derived from the BNC World Edition but has been
+converted to use XML throughout, and also to include explicit
+lemmatization. </para>
+      <para>The BNC is the result of of a unique collaboration between three major
+U.K. dictionary publishers, two universities, and the British Library.
+The dictionary publishers are Chambers Harrap, Longman, and Oxford
+University Press; the universities are The Unit for Computer Research
+into the English Language (UCREL) at Lancaster University; and Oxford
+University Services (OUCS). </para>
+      <para>The development of the BNC was funded by the commercial partners in
+the consortium with assistance from the the U.K. government's Department
+of Trade and Industry (DTI) and Science and Engineering Research Council
+(SERC) under the Joint Framework for Information Technology
+(JFIT).</para>
+      <para>The British National Corpus is <list><item>
+A *large* corpus: its hundred million words are made up of
+ninety million from written and ten million from spoken
+sources.
+</item><item>
+A *sample* corpus: it is composed of text samples,
+generally of no more than 40,000 words, rather than of
+complete works.
+</item><item>
+A *synchronic* corpus: it includes imaginative
+texts dating from the 1960s to 1994; informative texts
+dating from 1975 to 1994; and spoken texts gathered
+primarily between 1990 and 1994.
+</item><item>
+A *general* corpus: it is not specifically
+restricted to any particular subject field, register or
+genre. It includes language from all age and social groups
+and a broad spread of U.K. regions.
+</item><item>
+A *monolingual* British English Corpus: text
+samples are substantially the product of British English
+speakers. A small proportion of the words in the corpus are
+in a foreign language or non-British English.
+</item><item>
+A *TEI-conformant* Corpus: texts in the corpus are
+uniformly marked up according to the recommendations of the
+Text Encoding Initiative (TEI), an international consortium
+concerned with the mark-up of texts for use in academic
+research. Originally expressed using Standardized General
+Markup Language (SGML; IS 8879:1986), the corpus is now
+encoded using XML.
+</item></list></para>
+      <para>Lexicography: The corpus provides a body of new data on word
+meaning, grammar and usage. It yields empirical data on word
+frequencies, word classes and spelling preferences, among other
+things. It also reveals hitherto undocumented evidence about the
+spoken language, with consequences that go far beyond the
+immediate impact on dictionary-writing.</para>
+      <para>Linguistic research: The corpus provides a standard basis for
+investigating phenomena and testing competing linguistic
+theories.</para>
+      <para>Language technology: Statistical techniques, requiring very
+large samples of text, are increasingly used in machine
+translation, speech recognition, speech synthesizers, spelling
+and grammar checkers for word-processing and desk-top
+publishing, hand-held electronic books and other developments in
+information technology.</para>
+      <para>Teaching: The corpus provides a rich source of examples of
+current usage for English Language Teaching, allowing more
+frequent patterns of use to be distinguished from less frequent.
+In addition, the corpus provides a valuable didactic resource
+for use in many areas of higher education.</para>
+      <para>As a model: Future TEI-conformant corpora, in English and
+other languages, may base their designs on the experience gained
+in the production of the BNC.</para>
+    </projectDesc>
+    <samplingDecl>
+      <para>Definitive information on the sampling policies
+applied during  construction of the BNC is provided in the associated
+reference documentation. Different kinds of material were selected in
+different ways. Half the spoken material was chosen by a demographic
+sampling procedure, and the other half by sampling from
+predetermined contexts. Written material was selected
+randomly within the constraints of predetermined design criteria. The
+object was to maximize variation within each sampling
+frame.</para>
+    </samplingDecl>
+    <editorialDecl>
+      <para>Material included in the BNC was produced by
+several different agencies and went through several pre- and
+post processing stages. An attempt has been made at consistency with
+respect to such matters as: treatment of perceived errors in the
+original (these are either silently corrected, or corrected with the
+&lt;corr&gt; element); treatment of end-of-line hyphenation (for the
+most part, end-of-line hyphenation has been removed); treatment of
+punctuation marks (all single or double quotation marks have been
+represented as &lt;c&gt; elements containing the appropriate Unicode
+character); segmentation into &lt;s&gt; ("sentence"), &lt;mw&gt;
+("multiword"), &lt;w&gt;("word"), and
+&lt;c&gt; ("punctuation string") elements  has been carried uniformly
+out across the whole corpus.</para>
+      <para>Material was originally prepared variously by copy-typing,
+scanning followed by OCR, and conversion from machine-readable
+sources. All material was processed to a common SGML format, and all
+subsequent processing, including addition of linguistic annotation,
+conversion to XML, and most error correction, was done using a wide
+range of software tools.</para>
+    </editorialDecl>
+    <refsDecl>
+      <para>Canonical references to the BNC should be
+constructed by taking the value of the n
+attribute of the &lt;bncDoc&gt; element containing the target text, and
+concatenating a dot separator, followed by the value of the n attribute of the
+target &lt;s&gt; element containing the material to be referenced.</para>
+      <para>Segments are numbered sequentially within each text or stext,
+starting at 1. There may be gaps in the numeric sequence, as a
+consequence of post-segmentation corrections.</para>
+    </refsDecl>
+    <classDecl>
+      <taxonomy xml:id="DLee">
+        <desc>David Lee's register and domain classification</desc>
+        <bibl>
+          <title>Register classification</title>
+          <author>David Lee</author>
+          <imprint>
+            <pubPlace>http://members.xoom.com/davidlee00/genre_register.zip</pubPlace>
+          </imprint>
+        </bibl>
+      </taxonomy>
+      <taxonomy xml:id="COPAC">
+        <desc>Bibliographic keywords from COPAC</desc>
+        <bibl>
+          <title>[Keyword classifications]</title>
+          <imprint>
+            <pubPlace>http://copac.ac.uk</pubPlace>
+          </imprint>
+        </bibl>
+      </taxonomy>
+      <taxonomy xml:id="textMode">
+        <desc>Text mode</desc>
+        <category xml:id="acad">
+          <catDesc>Academic prose</catDesc>
+        </category>
+        <category xml:id="demog">
+          <catDesc>Unscripted conversation</catDesc>
+        </category>
+        <category xml:id="fict">
+          <catDesc>Imaginative prose</catDesc>
+        </category>
+        <category xml:id="news">
+          <catDesc>Newspapers and periodicals</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="derivedTextType">
+        <desc>Text class</desc>
+        <category xml:id="ACPROSE">
+          <catDesc>Academic prose</catDesc>
+        </category>
+        <category xml:id="FICTION">
+          <catDesc>Fiction and verse</catDesc>
+        </category>
+        <category xml:id="NONAC">
+          <catDesc>Non-academic prose and biography</catDesc>
+        </category>
+        <category xml:id="NEWS">
+          <catDesc>Newspapers</catDesc>
+        </category>
+        <category xml:id="OTHERPUB">
+          <catDesc>Other published written material</catDesc>
+        </category>
+        <category xml:id="UNPUB">
+          <catDesc>Unpublished written material</catDesc>
+        </category>
+        <category xml:id="CONVRSN">
+          <catDesc>Spoken conversation</catDesc>
+        </category>
+        <category xml:id="OTHERSP">
+          <catDesc>Other spoken material</catDesc>
+        </category>
+      </taxonomy>-->
+<!--      <taxonomy xml:id="allava">
+        <desc>Availability</desc>
+        <category xml:id="ALLAVA0">
+          <catDesc>Ownership unclaimed</catDesc>
+        </category>
+        <category xml:id="ALLAVA2">
+          <catDesc>Worldwide rights cleared</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="ALLTYP">
+        <desc>Text type</desc>
+        <category xml:id="ALLTYP1">
+          <catDesc>Spoken demographic</catDesc>
+        </category>
+        <category xml:id="ALLTYP2">
+          <catDesc>Spoken context-governed</catDesc>
+        </category>
+        <category xml:id="ALLTYP3">
+          <catDesc>Written books and periodicals</catDesc>
+        </category>
+        <category xml:id="ALLTYP4">
+          <catDesc>Written-to-be-spoken</catDesc>
+        </category>
+        <category xml:id="ALLTYP5">
+          <catDesc>Written miscellaneous</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="SCGDOM">
+        <desc>Spoken context</desc>
+        <category xml:id="SCGDOM1">
+          <catDesc>Educational/Informative</catDesc>
+        </category>
+        <category xml:id="SCGDOM2">
+          <catDesc>Business</catDesc>
+        </category>
+        <category xml:id="SCGDOM3">
+          <catDesc>Public/Institutional</catDesc>
+        </category>
+        <category xml:id="SCGDOM4">
+          <catDesc>Leisure</catDesc>
+        </category>
+      </taxonomy>
+    -->  <taxonomy xml:id="sdeage">
+        <desc>Age-group</desc>
+        <category xml:id="sdeage1">
+          <catDesc>Respondent Age 0-14</catDesc>
+        </category>
+        <category xml:id="sdeage2">
+          <catDesc>Respondent Age 15-24</catDesc>
+        </category>
+        <category xml:id="sdeage3">
+          <catDesc>Respondent Age 25-34</catDesc>
+        </category>
+        <category xml:id="sdeage4">
+          <catDesc>Respondent Age 35-44</catDesc>
+        </category>
+        <category xml:id="sdeage5">
+          <catDesc>Respondent Age 45-59</catDesc>
+        </category>
+        <category xml:id="sdeage6">
+          <catDesc>Respondent Age 60+</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="sdecla">
+        <desc>Social class</desc>
+        <category xml:id="sdecla0">
+          <catDesc>Unknown class</catDesc>
+        </category>
+        <category xml:id="sdecla1">
+          <catDesc>AB respondent</catDesc>
+        </category>
+        <category xml:id="sdecla2">
+          <catDesc>C1 respondent</catDesc>
+        </category>
+        <category xml:id="sdecla3">
+          <catDesc>C2 respondent</catDesc>
+        </category>
+        <category xml:id="sdecla4">
+          <catDesc>DE respondent</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="sdesex">
+        <desc>Sex</desc>
+        <category xml:id="sdesex0">
+          <catDesc>Respondent sex unknown</catDesc>
+        </category>
+        <category xml:id="sdesex1">
+          <catDesc>Male respondent</catDesc>
+        </category>
+        <category xml:id="sdesex2">
+          <catDesc>Female respondent</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="spolog">
+        <desc>Interaction type</desc>
+        <category xml:id="spolog1">
+          <catDesc>Monologue</catDesc>
+        </category>
+        <category xml:id="spolog2">
+          <catDesc>Dialogue</catDesc>
+        </category>
+      </taxonomy>
+ -->     <taxonomy xml:id="sporeg">
+        <desc>Region</desc>
+        <category xml:id="sporeg0">
+          <catDesc>Unknown</catDesc>
+        </category>
+        <category xml:id="sporeg1">
+          <catDesc>South </catDesc>
+        </category>
+        <category xml:id="sporeg2">
+          <catDesc>Midlands</catDesc>
+        </category>
+        <category xml:id="sporeg3">
+          <catDesc>North</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="WRIAUD">
+        <desc>Audience age</desc>
+        <category xml:id="WRIAUD1">
+          <catDesc>Child audience</catDesc>
+        </category>
+        <category xml:id="WRIAUD2">
+          <catDesc>Teenager audience</catDesc>
+        </category>
+        <category xml:id="WRIAUD3">
+          <catDesc>Adult audience</catDesc>
+        </category>
+        <category xml:id="WRIAUD4">
+          <catDesc>Any audience</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="WRITAS">
+        <desc>Audience sex</desc>
+        <category xml:id="WRITAS1">
+          <catDesc>Male audience</catDesc>
+        </category>
+        <category xml:id="WRITAS2">
+          <catDesc>Female audience</catDesc>
+        </category>
+        <category xml:id="WRITAS3">
+          <catDesc>Mixed audience</catDesc>
+        </category>
+        <category xml:id="WRITAS0">
+          <catDesc>Unknown audience</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="WRIAAG">
+        <desc>Author age-group</desc>
+        <category xml:id="WRIAAG0">
+          <catDesc>Author age unknown</catDesc>
+        </category>
+        <category xml:id="WRIAAG1">
+          <catDesc>Author age 0-14</catDesc>
+        </category>
+        <category xml:id="WRIAAG2">
+          <catDesc>Author age 15-24</catDesc>
+        </category>
+        <category xml:id="WRIAAG3">
+          <catDesc>Author age 25-34</catDesc>
+        </category>
+        <category xml:id="WRIAAG4">
+          <catDesc>Author age 35-44</catDesc>
+        </category>
+        <category xml:id="WRIAAG5">
+          <catDesc>Author age 45-59</catDesc>
+        </category>
+        <category xml:id="WRIAAG6">
+          <catDesc>Author age 60+</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="WRIAD">
+        <desc>Domicile</desc>
+        <category xml:id="WRIAD1">
+          <catDesc>Author domicile UK and Ireland</catDesc>
+        </category>
+        <category xml:id="WRIAD2">
+          <catDesc>Author domicile Commonwealth</catDesc>
+        </category>
+        <category xml:id="WRIAD3">
+          <catDesc>Author domicile Continental Europe</catDesc>
+        </category>
+        <category xml:id="WRIAD4">
+          <catDesc>Author domicile USA</catDesc>
+        </category>
+        <category xml:id="WRIAD5">
+          <catDesc>Author domicile Elsewhere</catDesc>
+        </category>
+        <category xml:id="WRIAD0">
+          <catDesc>Author domicile Unknown</catDesc>
+        </category>
+      </taxonomy>
+    -->  <taxonomy xml:id="wriase">
+        <desc>Sex of author</desc>
+        <category xml:id="wriase0">
+          <catDesc>Author sex Unknown</catDesc>
+        </category>
+        <category xml:id="wriase1">
+          <catDesc>Author sex Male</catDesc>
+        </category>
+        <category xml:id="wriase2">
+          <catDesc>Author sex Female</catDesc>
+        </category>
+        <category xml:id="wriase3">
+          <catDesc>Author sex Mixed</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="WRIATY">
+        <desc>Author type</desc>
+        <category xml:id="WRIATY1">
+          <catDesc>Corporate author</catDesc>
+        </category>
+        <category xml:id="WRIATY2">
+          <catDesc>Multiple author</catDesc>
+        </category>
+        <category xml:id="WRIATY3">
+          <catDesc>Sole author</catDesc>
+        </category>
+        <category xml:id="WRIATY0">
+          <catDesc>Unknown author</catDesc>
+        </category>
+      </taxonomy>
+    -->  <taxonomy xml:id="wrista">
+        <desc>Estimated circulation size</desc>
+        <category xml:id="wrista0">
+          <catDesc>Unknown circulation</catDesc>
+        </category>
+        <category xml:id="wrista1">
+          <catDesc>Low circulation</catDesc>
+        </category>
+        <category xml:id="wrista2">
+          <catDesc>Medium circulation</catDesc>
+        </category>
+        <category xml:id="wrista3">
+          <catDesc>High circulation</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="WRILEV">
+        <desc>Written Difficulty</desc>
+        <category xml:id="WRILEV1">
+          <catDesc>Low difficulty</catDesc>
+        </category>
+        <category xml:id="WRILEV2">
+          <catDesc>Medium difficulty</catDesc>
+        </category>
+        <category xml:id="WRILEV3">
+          <catDesc>High difficulty</catDesc>
+        </category>
+      </taxonomy>
+    -->  <taxonomy xml:id="wridom">
+        <desc>Written Domain</desc>
+        <category xml:id="wridom1">
+          <catDesc>Imaginative</catDesc>
+        </category>
+        <category xml:id="wridom2">
+          <catDesc>Informative: natural &amp; pure science</catDesc>
+        </category>
+        <category xml:id="wridom3">
+          <catDesc>Informative: applied science</catDesc>
+        </category>
+        <category xml:id="wridom4">
+          <catDesc>Informative: social science</catDesc>
+        </category>
+        <category xml:id="wridom5">
+          <catDesc>Informative: world affairs</catDesc>
+        </category>
+        <category xml:id="wridom6">
+          <catDesc>Informative: commerce &amp; finance</catDesc>
+        </category>
+        <category xml:id="wridom7">
+          <catDesc>Informative: arts</catDesc>
+        </category>
+        <category xml:id="wridom8">
+          <catDesc>Informative: belief &amp; thought</catDesc>
+        </category>
+        <category xml:id="wridom9">
+          <catDesc>Informative: leisure</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="WRIMED">
+        <desc>Written Medium</desc>
+        <category xml:id="WRIMED1">
+          <catDesc>Book</catDesc>
+        </category>
+        <category xml:id="WRIMED2">
+          <catDesc>Periodical</catDesc>
+        </category>
+        <category xml:id="WRIMED3">
+          <catDesc>Miscellaneous published</catDesc>
+        </category>
+        <category xml:id="WRIMED4">
+          <catDesc>Miscellaneous unpublished</catDesc>
+        </category>
+        <category xml:id="WRIMED5">
+          <catDesc>To-be-spoken</catDesc>
+        </category>
+      </taxonomy>
+    -->  <taxonomy xml:id="alltim">
+        <desc>Publication date</desc>
+        <category xml:id="alltim1">
+          <catDesc>1960-1974</catDesc>
+        </category>
+        <category xml:id="alltim2">
+          <catDesc>1975-1984</catDesc>
+        </category>
+        <category xml:id="alltim3">
+          <catDesc>1985-1993</catDesc>
+        </category>
+        <category xml:id="alltim0">
+          <catDesc>Unknown</catDesc>
+        </category>
+      </taxonomy>
+<!--      <taxonomy xml:id="WRIPP">
+        <desc>Publication place</desc>
+        <category xml:id="WRIPP0">
+          <catDesc>Unknown publication place</catDesc>
+        </category>
+        <category xml:id="WRIPP1">
+          <catDesc>UK (unspecific) publication</catDesc>
+        </category>
+        <category xml:id="WRIPP2">
+          <catDesc>Ireland publication</catDesc>
+        </category>
+        <category xml:id="WRIPP6">
+          <catDesc>United States publication</catDesc>
+        </category>
+        <category xml:id="WRIPP3">
+          <catDesc>UK: North (north of Mersey-Humber line) publication</catDesc>
+        </category>
+        <category xml:id="WRIPP4">
+          <catDesc>UK: Midlands (north of Bristol Channel-Wash line) publication</catDesc>
+        </category>
+        <category xml:id="WRIPP5">
+          <catDesc>UK: South (south of Bristol Channel-Wash line) publication</catDesc>
+        </category>
+      </taxonomy>
+      <taxonomy xml:id="WRISAM">
+        <desc>Sampling type</desc>
+        <category xml:id="WRISAM0">
+          <catDesc>Unknown sampling</catDesc>
+        </category>
+        <category xml:id="WRISAM1">
+          <catDesc>Whole text</catDesc>
+        </category>
+        <category xml:id="WRISAM2">
+          <catDesc>Beginning sample</catDesc>
+        </category>
+        <category xml:id="WRISAM3">
+          <catDesc>Middle sample</catDesc>
+        </category>
+        <category xml:id="WRISAM4">
+          <catDesc>End sample</catDesc>
+        </category>
+        <category xml:id="WRISAM5">
+          <catDesc>Composite sample</catDesc>
+        </category>
+      </taxonomy>-->
+
+
+    </classDecl>
+    <xairaSpecification>
+      <xairaList type="elementSpec">
+        <xairaItem type="element" ident="*">
+          <desc>global attributes</desc>
+          <attList>
+            <attDef ident="id" ns="http://www.w3.org/XML/1998/namespace">
+              <desc>a name or number used to label any element</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="activity">
+          <desc>(activity) contains a brief informal description of what a participant in a
+language interaction is doing other than speaking, if anything.</desc>
+          <attList>
+            <attDef ident="spont">
+              <desc>level of spontaneity</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="address">
+          <desc>contains a postal or other address, for example of a
+publisher, an organization, or an individual.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="age">
+          <desc>specifies the age in years of a recorded participant at the time of the
+  recording in which they participate. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="align">
+          <desc>marks an temporal alignment point within transcribed speech</desc>
+          <attList>
+            <attDef ident="with">
+              <desc>supplies an arbitrary identifier; all
+      elements specifying the same value for this attribute are
+      understood to be aligned with each other in time.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="attDef">
+          <desc>(attribute definition) provides the definition for a single attribute.</desc>
+          <attList>
+            <attDef ident="ns">
+              <desc>(namespace) specifies the namespace to which this attribute belongs</desc>
+            </attDef>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="attList">
+          <desc>contains documentation for all the attributes associated with this
+element, as a series of attDef elements.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="attributePolicy">
+          <desc>specifies the indexing policy to be used for one or more
+attributes. </desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+            <attDef ident="ident">
+              <desc>identifies the attribute to which the
+indexing policy applies</desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>specifies the required indexing policy
+</desc>
+              <valList>
+                <valItem ident="none">
+                  <desc>no part of the attribute will be indexed</desc>
+                </valItem>
+                <valItem ident="jointo">
+                  <desc>the attribute supplies an identifier
+which can be linked to from elsewhere</desc>
+                </valItem>
+                <valItem ident="joinfrom">
+                  <desc>the value of the attribute is used as
+an  identifier on some other element</desc>
+                </valItem>
+                <valItem ident="taxonomy">
+                  <desc>the value of the attribute is used to
+supply a key for some predefined codebook or taxonomy of possible
+values</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="author">
+          <desc>in a bibliographic reference, contains the name of the author(s),
+personal or corporate,
+of a work; the primary statement of responsibility for any
+bibliographic item. </desc>
+          <attList>
+            <attDef ident="domicile">
+              <desc>main country of residence where known</desc>
+            </attDef>
+            <attDef ident="n">
+              <desc>internal identifier</desc>
+            </attDef>
+            <attDef ident="born">
+              <desc>year of birth where known</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="availability">
+          <desc>supplies information about the availability of a text, for
+  example any restrictions on its use or distribution, its copyright
+  status, etc.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="bibliography" ns="http://xaira.org/ns/1.0/bibliography">
+	  <desc>contains bibliographic description of a source text in
+	  the corpus, extracted from the text itself</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="bibl">
+          <desc>(bibliographic citation) contains a loosely-structured bibliographic citation of which
+the sub-components may or may not be explicitly tagged. </desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="bnc">
+          <desc>(TEI corpus) contains the whole of a TEI encoded corpus, comprising a
+single corpus header and one or more TEI elements, each containing
+a single text header and a text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="bncDoc">
+          <desc>contains a distinct document within the corpus, either spoken
+ or written.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="c">
+          <desc>(character) contains a significant punctuation mark as identified by the CLAWS tagger. </desc>
+          <attList>
+            <attDef ident="c5">
+              <desc>the CLAWS 5 code associated with this punctuation
+   mark. </desc>
+              <valList>
+                <valItem ident="PUN">
+                  <desc>any separating punctuation mark</desc>
+                </valItem>
+                <valItem ident="PUL">
+                  <desc>opening round or square parenthesis</desc>
+                </valItem>
+                <valItem ident="PUR">
+                  <desc>closing round or square parenthesis</desc>
+                </valItem>
+                <valItem ident="PUQ">
+                  <desc>any quotation mark</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="catDesc">
+          <desc>(category description) provides a description for one category within the text taxonomies
+provided in the corpus header.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="catRef">
+          <desc>(category reference) provides a list of codes identifying the categories to which
+this text has been assigned, each code referencing a category element
+declared in the corpus header.</desc>
+          <attList>
+            <attDef ident="targets">
+              <desc>identifies the categories concerned
+   </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="category">
+          <desc>(category) defines a single category within a taxonomy of texts.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="change">
+          <desc>summarizes a particular change or correction made
+to a particular version of an electronic text which is
+shared between several researchers.</desc>
+          <attList>
+            <attDef ident="date">
+              <desc>supplies the date of the change in standard form,  i.e. yyyy-mm-dd.</desc>
+            </attDef>
+            <attDef ident="who">
+              <desc>indicates the person, or group of
+	people, to whom the element content is ascribed.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="classCode">
+          <desc>(classCode) contains the classification code used for this text in some
+standard classification system.</desc>
+          <attList>
+            <attDef ident="scheme">
+              <desc>identifies the classification system or taxonomy in use.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="classDecl">
+          <desc>(classification declarations) contains one or more taxonomies defining any classificatory
+codes used elsewhere in the text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="collate">
+          <desc>supplies any additional ICU-conformant collating rules to be used when sorting
+words in the corpus. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="corr">
+          <desc>(correction) contains the correct form of a passage apparently erroneous in the copy text.</desc>
+          <attList>
+            <attDef ident="sic">
+              <desc>contains verbatim text which has been corrected, or an empty string if
+the correction consists of an addition. </desc>
+            </attDef>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="resp">
+              <desc>a code identifying the agency responsible for making the
+correction.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="creation">
+          <desc>contains information about the creation of a text.</desc>
+          <attList>
+            <attDef ident="date">
+              <desc>supplies the year of original composition, if known; or 000-00-00 if
+the date is unknown. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="date">
+          <desc>contains a date in any format.</desc>
+          <attList>
+            <attDef ident="value">
+              <desc>supplies a standardized representation of the date</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="defaultVal">
+          <desc>specifies the default declared value for an attribute.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="desc">
+          <desc>(description) contains a brief description of the purpose and application for
+an element, attribute, or attribute value.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="dialect">
+          <desc>contains an informal description of the regional variety of
+English used by a participant in a spoken text. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="distributor">
+          <desc>supplies the name of a person or other agency responsible for the
+distribution of a text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="div">
+          <desc>(text division) contains a subdivision of the front, body, or back of a
+text.</desc>
+          <attList>
+            <attDef ident="n">
+              <desc>for a spoken text, identities the tape corresponding to this
+division. </desc>
+            </attDef>
+            <attDef ident="decls">
+              <desc>for a spoken text, identities the declarations (for setting,
+recording etc.) in the header which apply to this
+division. </desc>
+            </attDef>
+            <attDef ident="level">
+              <desc>specifies the hierarchic level of this division as a number
+between  1 (outermost or largest division) and 4
+(innermost or smallest). </desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>identifies the type or function of the division (for a written text).</desc>
+            </attDef>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="edition">
+          <desc>(Edition) describes the particularities of one edition of a text.</desc>
+          <attList>
+            <attDef ident="n">
+              <desc>supplies an identifying number for the edition</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="editionStmt">
+          <desc>(edition statement) groups information relating to one edition of a text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="editor">
+          <desc>(editor) secondary statement of responsibility for a
+bibliographic item, for example the name of an individual, institution
+or organization, (or of several such) acting as editor, compiler,
+translator, etc. </desc>
+          <attList>
+            <attDef ident="n">
+              <desc>supplies a number for the editor where multiple editors are
+specified for a single text</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="editorialDecl">
+          <desc>(editorial practice declaration) provides details of editorial principles and practices applied
+during the encoding of a text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="elementPolicy">
+          <desc>specifies the xaira indexing policy to be used for one or more
+elements. </desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>identifies the element to which the
+indexing policy applies.</desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>specifies the required indexing policy.
+</desc>
+              <valList>
+                <valItem ident="none">
+                  <desc>no part of the element or its
+content will be indexed.</desc>
+                </valItem>
+                <valItem ident="children">
+                  <desc>no part of the element will be
+indexed, but any child elements will be.</desc>
+                </valItem>
+                <valItem ident="content">
+                  <desc>only the text and child content of the element will be
+indexed.</desc>
+                </valItem>
+                <valItem ident="markup">
+                  <desc>only the start and end tags for the
+element and any child elements not otherwise specified will be
+indexed.</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="encodingDesc">
+          <desc>(Encoding description) documents the relationship between an electronic text and the
+source or sources from which it was derived.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="event">
+          <desc>(Event) any phenomenon or occurrence, not necessarily vocalized or
+communicative, for example incidental noises or other events affecting
+communication.</desc>
+          <attList>
+            <attDef ident="desc">
+              <desc>provides a brief description of the event</desc>
+            </attDef>
+            <attDef ident="dur">
+              <desc>(duration) indicates the duration of the element in minutes. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="extent">
+          <desc>specifies the approximate size of the text, in orthographic
+words, w elements, and s elements </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="fileDesc">
+          <desc>(File Description) contains a full bibliographic description of an electronic
+file.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="gap">
+          <desc>(omitted material) indicates a point where material has been omitted from the
+transcription. </desc>
+          <attList>
+            <attDef ident="desc">
+              <desc>briefly describes the material which has been omitted. </desc>
+            </attDef>
+            <attDef ident="reason">
+              <desc>gives further details of the reason for omission.</desc>
+            </attDef>
+            <attDef ident="resp">
+              <desc>indicates the agency responsible for the
+	intervention or interpretation, for example an editor or transcriber.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="gi">
+          <desc>(generic identifier) contains the name (generic identifier) of an element.</desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="head">
+          <desc>(heading) contains any type of heading, for example the title of a section,
+or the heading of a list, glossary, manuscript description, etc.</desc>
+          <attList>
+            <attDef ident="type">
+              <desc/>
+              <valList>
+                <valItem ident="MAIN">
+                  <desc>a major heading. </desc>
+                </valItem>
+                <valItem ident="SUB">
+                  <desc>any sub-heading.</desc>
+                </valItem>
+                <valItem ident="BYLINE">
+                  <desc>a sub-heading providing the name of a
+journalist or other source of a newspaper report.</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="hi">
+          <desc>(highlighted) marks a word or phrase as graphically distinct from the
+surrounding text, for reasons concerning which no claim is
+made. </desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="ident">
+          <desc>contains an identifier or name for an object of some kind in a formal language</desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="idno">
+          <desc>(identifying number) supplies an identifying code for a text.</desc>
+          <attList>
+            <attDef ident="type">
+              <desc>categorizes the code number used.</desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>categorizes the number, for example as an ISBN or other
+         standard series.
+   </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="imprint">
+          <desc>groups information relating to the publication or distribution
+  of a bibliographic item.</desc>
+          <attList>
+            <attDef ident="n">
+              <desc>internal identifier</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="item">
+          <desc>contains one
+component of a list.</desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="joinTo">
+          <desc>supplies a list of element names carrying an attribute which has
+been specified with the xaira "joinTo" indexing policy.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="keywords">
+          <desc>(Keywords) contains a list of keywords or phrases identifying the topic or
+nature of a text.</desc>
+          <attList>
+            <attDef ident="scheme">
+              <desc>identifies the controlled vocabulary within which the set of
+  keywords concerned is defined.
+   </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="l">
+          <desc>(verse line) contains a single, possibly incomplete, line of verse.</desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="label">
+          <desc>contains the label associated with an item in a list; in
+glossaries, marks the term being defined.</desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="labelGen">
+          <desc>specifies the label to be generated for the parent reference. </desc>
+          <attList>
+            <attDef ident="change">
+              <desc>specifies when the new label is to be generated. </desc>
+              <valList>
+                <valItem ident="onStart">
+                  <desc>a new label is generated when a new
+instance of the scope-defining element is found, and remains in force
+until the next such element is found.</desc>
+                </valItem>
+                <valItem ident="within">
+                  <desc>a new label is generated when a new
+instance of the scope-defining element is found, and remains in force
+until that instance ends.</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="langUsage">
+          <desc>(language usage) describes the languages, sublanguages, registers, dialects etc.
+represented within a text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="language">
+          <desc>characterizes a single language or sublanguage used within a
+  text.</desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>Supplies a language code constructed as defined in RFC 3066 (or
+      its successor) which is used to identify the language documented
+      by this element, and which is referenced by the global xml:lang attribute.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="lg">
+          <desc>(line group) contains a group of verse lines functioning as a formal unit,
+e.g. a stanza, refrain, verse paragraph, etc.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="list">
+          <desc>contains any sequence of items organized as a list.</desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="locale">
+          <desc>(locale) contains a brief informal description of the nature of a
+place for example a room, a restaurant, a park bench etc.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="mw">
+          <desc>contains a multi-word unit as identified by CLAWS, that is, a
+sequence of individual tokens which function as a single
+unit and can be given a single part of speech code. </desc>
+          <attList>
+            <attDef ident="c5">
+              <desc>supplies the CLAWS 5 code associated with this word.</desc>
+              <valList>
+                <valItem ident="AJ0">
+                  <desc>Adjective (general or positive) (e.g. good, old, beautiful)</desc>
+                </valItem>
+                <valItem ident="AJC">
+                  <desc>Comparative adjective (e.g. better, older)</desc>
+                </valItem>
+                <valItem ident="AJS">
+                  <desc>Superlative adjective (e.g. best, oldest)</desc>
+                </valItem>
+                <valItem ident="AT0">
+                  <desc>Article (e.g. the, a, an, no)</desc>
+                </valItem>
+                <valItem ident="AV0">
+                  <desc>General adverb: an adverb not subclassified as AVP or AVQ (see below) (e.g. often, well, longer (adv.), furthest.</desc>
+                </valItem>
+                <valItem ident="AVP">
+                  <desc>Adverb particle (e.g. up, off, out)</desc>
+                </valItem>
+                <valItem ident="AVQ">
+                  <desc>Wh-adverb (e.g. when, where, how, why, wherever) </desc>
+                </valItem>
+                <valItem ident="CJC">
+                  <desc>Coordinating conjunction (e.g. and, or, but)</desc>
+                </valItem>
+                <valItem ident="CJS">
+                  <desc>Subordinating conjunction (e.g. although, when)</desc>
+                </valItem>
+                <valItem ident="CJT">
+                  <desc>The subordinating conjunction that</desc>
+                </valItem>
+                <valItem ident="CRD">
+                  <desc>Cardinal number (e.g. one, 3, fifty-five, 3609)</desc>
+                </valItem>
+                <valItem ident="DPS">
+                  <desc>Possessive determiner-pronoun (e.g. your, their, his)</desc>
+                </valItem>
+                <valItem ident="DT0">
+                  <desc>General determiner-pronoun: i.e. a determiner-pronoun which is not a DTQ or an AT0. </desc>
+                </valItem>
+                <valItem ident="DTQ">
+                  <desc>Wh-determiner-pronoun (e.g. which, what, whose, whichever) </desc>
+                </valItem>
+                <valItem ident="EX0">
+                  <desc>Existential there, i.e. there occurring in the there is ... or there are ... construction</desc>
+                </valItem>
+                <valItem ident="ITJ">
+                  <desc>Interjection or other isolate (e.g. oh, yes, mhm, wow)</desc>
+                </valItem>
+                <valItem ident="NN0">
+                  <desc>Common noun, neutral for number (e.g. aircraft, data, committee) </desc>
+                </valItem>
+                <valItem ident="NN1">
+                  <desc>Singular common noun (e.g. pencil, goose, time, revelation)</desc>
+                </valItem>
+                <valItem ident="NN2">
+                  <desc>Plural common noun (e.g. pencils, geese, times, revelations)</desc>
+                </valItem>
+                <valItem ident="NP0">
+                  <desc>Proper noun (e.g. London, Michael, Mars, IBM) </desc>
+                </valItem>
+                <valItem ident="ORD">
+                  <desc>Ordinal numeral (e.g. first, sixth, 77th, last) .</desc>
+                </valItem>
+                <valItem ident="PNI">
+                  <desc>Indefinite pronoun (e.g. none, everything, one [as pronoun], nobody)</desc>
+                </valItem>
+                <valItem ident="PNP">
+                  <desc>Personal pronoun (e.g. I, you, them, ours)</desc>
+                </valItem>
+                <valItem ident="PNQ">
+                  <desc>Wh-pronoun (e.g. who, whoever, whom)</desc>
+                </valItem>
+                <valItem ident="PNX">
+                  <desc>Reflexive pronoun (e.g. myself, yourself, itself, ourselves)</desc>
+                </valItem>
+                <valItem ident="POS">
+                  <desc>The possessive or genitive marker 's or '</desc>
+                </valItem>
+                <valItem ident="PRF">
+                  <desc>The preposition of</desc>
+                </valItem>
+                <valItem ident="PRP">
+                  <desc>Preposition (except for of) (e.g. about, at, in, on, on behalf of, with)</desc>
+                </valItem>
+                <valItem ident="TO0">
+                  <desc>Infinitive marker to</desc>
+                </valItem>
+                <valItem ident="UNC">
+                  <desc>Unclassified items which are not appropriately considered as items of the English lexicon.</desc>
+                </valItem>
+                <valItem ident="VBB">
+                  <desc>The present tense forms of the verb BE, except for is, 's: i.e. am, are, 'm, 're and be [subjunctive or imperative]</desc>
+                </valItem>
+                <valItem ident="VBD">
+                  <desc>The past tense forms of the verb BE: was and were</desc>
+                </valItem>
+                <valItem ident="VBG">
+                  <desc>The -ing form of the verb BE: being</desc>
+                </valItem>
+                <valItem ident="VBI">
+                  <desc>The infinitive form of the verb BE: be</desc>
+                </valItem>
+                <valItem ident="VBN">
+                  <desc>The past participle form of the verb BE: been</desc>
+                </valItem>
+                <valItem ident="VBZ">
+                  <desc>The -s form of the verb BE: is, 's</desc>
+                </valItem>
+                <valItem ident="VDB">
+                  <desc>The finite base form of the verb BE: do</desc>
+                </valItem>
+                <valItem ident="VDD">
+                  <desc>The past tense form of the verb DO: did</desc>
+                </valItem>
+                <valItem ident="VDG">
+                  <desc>The -ing form of the verb DO: doing</desc>
+                </valItem>
+                <valItem ident="VDI">
+                  <desc>The infinitive form of the verb DO: do</desc>
+                </valItem>
+                <valItem ident="VDN">
+                  <desc>The past participle form of the verb DO: done</desc>
+                </valItem>
+                <valItem ident="VDZ">
+                  <desc>The -s form of the verb DO: does, 's</desc>
+                </valItem>
+                <valItem ident="VHB">
+                  <desc>The finite base form of the verb HAVE: have, 've</desc>
+                </valItem>
+                <valItem ident="VHD">
+                  <desc>The past tense form of the verb HAVE: had, 'd</desc>
+                </valItem>
+                <valItem ident="VHG">
+                  <desc>The -ing form of the verb HAVE: having</desc>
+                </valItem>
+                <valItem ident="VHI">
+                  <desc>The infinitive form of the verb HAVE: have</desc>
+                </valItem>
+                <valItem ident="VHN">
+                  <desc>The past participle form of the verb HAVE: had</desc>
+                </valItem>
+                <valItem ident="VHZ">
+                  <desc>The -s form of the verb HAVE: has, 's</desc>
+                </valItem>
+                <valItem ident="VM0">
+                  <desc>Modal auxiliary verb (e.g. will, would, can, could, 'll, 'd)</desc>
+                </valItem>
+                <valItem ident="VVB">
+                  <desc>The finite base form of lexical verbs (e.g. forget, send, live, return) [Including the imperative and present subjunctive]</desc>
+                </valItem>
+                <valItem ident="VVD">
+                  <desc>The past tense form of lexical verbs (e.g. forgot, sent, lived, returned)</desc>
+                </valItem>
+                <valItem ident="VVG">
+                  <desc>The -ing form of lexical verbs (e.g. forgetting, sending, living, returning)</desc>
+                </valItem>
+                <valItem ident="VVI">
+                  <desc>The infinitive form of lexical verbs (e.g. forget, send, live, return)</desc>
+                </valItem>
+                <valItem ident="VVN">
+                  <desc>The past participle form of lexical verbs (e.g. forgotten, sent, lived, returned)</desc>
+                </valItem>
+                <valItem ident="VVZ">
+                  <desc>The -s form of lexical verbs (e.g. forgets, sends, lives, returns)</desc>
+                </valItem>
+                <valItem ident="XX0">
+                  <desc>The negative particle not or n't </desc>
+                </valItem>
+                <valItem ident="ZZ0">
+                  <desc>Alphabetical symbols (e.g. A, a, B, b, c, d)</desc>
+                </valItem>
+                <valItem ident="AJ0-AV0">
+                  <desc>Probably AJ0 (adjective), but maybe AV0 (adverb)</desc>
+                </valItem>
+                <valItem ident="AJ0-NN1">
+                  <desc>Probably AJ0 (adjective), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVD">
+                  <desc>Probably AJ0 (adjective), but maybe VVD (verb past tense)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVG">
+                  <desc>Probably AJ0 (adjective), but maybe VVG (-ing verb)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVN">
+                  <desc>Probably AJ0 (adjective), but maybe VVN (verb past participle)</desc>
+                </valItem>
+                <valItem ident="AV0-AJ0">
+                  <desc>Probably AV0 (adverb), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="AVP-PRP">
+                  <desc>Probably AVP (adverb particle), but maybe PRP (preposition)</desc>
+                </valItem>
+                <valItem ident="AVQ-CJS">
+                  <desc>Probably AVQ (wh- adverb), but maybe CJS (subordinating conjunction)</desc>
+                </valItem>
+                <valItem ident="CJS-AVQ">
+                  <desc>Probably CJS (subordinating conjunction), but maybe AVQ (wh- adverb)</desc>
+                </valItem>
+                <valItem ident="CJS-PRP">
+                  <desc>Probably CJS (subordinating conjunction), but maybe PRP (preposition)</desc>
+                </valItem>
+                <valItem ident="CJT-DT0">
+                  <desc>Probably CJT ("that" as conjunction), but maybe DT0 (determiner)</desc>
+                </valItem>
+                <valItem ident="CRD-PNI">
+                  <desc>Probably CRD (number), but maybe PNI (indefinite pronoun)</desc>
+                </valItem>
+                <valItem ident="DT0-CJT">
+                  <desc>Probably DT0 (determiner), but maybe CJT ("that" as conjunction)</desc>
+                </valItem>
+                <valItem ident="NN1-AJ0">
+                  <desc>Probably NN1 (singular noun), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="NN1-NP0">
+                  <desc>Probably NN1 (singular noun), but maybe NP0 (proper noun)</desc>
+                </valItem>
+                <valItem ident="NN1-VVB">
+                  <desc>Probably NN1 (singular noun), but maybe VVB (verb)</desc>
+                </valItem>
+                <valItem ident="NN1-VVG">
+                  <desc>Probably NN1 (singular noun), but maybe VVG (-ing verb)</desc>
+                </valItem>
+                <valItem ident="NN2-VVZ">
+                  <desc>Probably NN2 (plural noun), but maybe VVZ (-s verb)</desc>
+                </valItem>
+                <valItem ident="NP0-NN1">
+                  <desc>Probably NP0 (proper noun), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="PNI-CRD">
+                  <desc>Probably PNI (indefinite pronoun), but maybe CRD (number)</desc>
+                </valItem>
+                <valItem ident="PRP-AVP">
+                  <desc>Probably PRP (preposition), but maybe AVP (adverb particle)</desc>
+                </valItem>
+                <valItem ident="PRP-CJS">
+                  <desc>Probably PRP (preposition), but maybe CJS (subordinating conjunction)</desc>
+                </valItem>
+                <valItem ident="VVB-NN1">
+                  <desc>Probably VVB (verb), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="VVD-AJ0">
+                  <desc>Probably VVD (verb past tense), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="VVD-VVN">
+                  <desc>Probably VVD (verb past tense), but maybe VVN (verb past participle)</desc>
+                </valItem>
+                <valItem ident="VVG-AJ0">
+                  <desc>Probably VVG (-ing verb), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="VVG-NN1">
+                  <desc>Probably VVG (-ing verb), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="VVN-AJ0">
+                  <desc>Probably VVN (verb past participle), but maybe AJ0</desc>
+                </valItem>
+                <valItem ident="VVN-VVD">
+                  <desc>Probably VVN (verb past participle), but maybe VVD (verb past tense)</desc>
+                </valItem>
+                <valItem ident="VVZ-NN2">
+                  <desc>Probably VVZ (-s verb), but maybe NN2 (plural noun)</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="name">
+          <desc>(name, proper noun) contains a proper noun or noun phrase.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="nameList">
+          <desc>supplies a list of element names or attribute identifiers</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="namespace">
+          <desc>supplies the formal name of the namespace to which the elements
+documented by its children belong. </desc>
+          <attList>
+            <attDef ident="name">
+              <desc>the full formal name of the namespace concerned.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="note">
+          <desc>contains a note or annotation.</desc>
+          <attList>
+            <attDef ident="place">
+              <desc/>
+            </attDef>
+            <attDef ident="n">
+              <desc>internal identifier</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="occupation">
+          <desc>contains an informal description of a person's trade,
+profession or occupation.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="p">
+          <desc>(paragraph) marks paragraphs in prose.</desc>
+          <attList>
+            <attDef ident="type">
+              <desc>indicates how the paragraph is displayed</desc>
+            </attDef>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="para">
+          <desc>contains descriptive text appearing within components of a TEI header</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="particDesc">
+          <desc>(participation description) describes the identifiable speakers, voices, or other participants
+in a linguistic interaction. </desc>
+          <attList>
+            <attDef ident="n">
+              <desc>internal identifier</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="pause">
+          <desc>a pause either between or within utterances.</desc>
+          <attList>
+            <attDef ident="dur">
+              <desc>(duration) indicates the duration of the element in minutes. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="pb">
+          <desc>(page break) marks the boundary between one page of a text and the next
+in a standard reference system.</desc>
+          <attList>
+            <attDef ident="n">
+              <desc>gives the number of the page beginning here</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="persName">
+          <desc>(personal name) contains a proper noun or proper-noun phrase referring to a
+  person, possibly including any or all of the person's forenames,
+  surnames, honorifics, added names, etc.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="persNote">
+          <desc>contains any additional information supplied about a participant in a spoken text </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="person">
+          <desc>provides information about an identifiable individual, for
+example a participant in a language interaction, or a person referred
+to in a historical source.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="placeName">
+          <desc>(place name) contains an absolute or relative place name. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="pp">
+          <desc>supplies page numbers for a bibliographic citation.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="profileDesc">
+          <desc>(text-profile description) provides a detailed description of non-bibliographic aspects of a
+text, specifically the languages and sublanguages used, the situation in
+which it was produced, the participants and their setting.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="projectDesc">
+          <desc>(project description) describes in detail the aim or purpose for which an electronic
+file was encoded, together with any other relevant information
+concerning the process by which it was assembled or collected.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="pubPlace">
+          <desc>contains the name of the place where a bibliographic item was
+published.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="publicationStmt">
+          <desc>(publication statement) groups information concerning the publication or distribution
+of an electronic or other text. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="publisher">
+          <desc>provides the name of the organization responsible for
+the publication or distribution of a bibliographic item.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="quote">
+          <desc>(quotation) contains a phrase or passage attributed by the narrator or
+author to some agency external to the text. </desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="recording">
+          <desc>(recording event) details of an audio or video recording event
+used as the source of a spoken text, either directly or from
+a public broadcast. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="recordingStmt">
+          <desc>(recording statement) describes a set of recordings used in transcription of a
+spoken text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="refsDecl">
+          <desc>(references declaration) provides documentation for the reference system applicable to
+the corpus. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="relation">
+          <desc>(relationship) describes any kind of relationship or linkage amongst a specified
+group of participants.</desc>
+          <attList>
+            <attDef ident="active">
+              <desc>identifies the active participants in a non-mutual
+relationship, or all the participants in a mutual one.</desc>
+            </attDef>
+            <attDef ident="mutual">
+              <desc>supplies a list of participants amongst all of whom the relationship holds equally.</desc>
+            </attDef>
+            <attDef ident="name">
+              <desc>supplies a name for the kind of  relationship of which
+	this is an instance.</desc>
+            </attDef>
+            <attDef ident="passive">
+              <desc>identifies the passive participants in a non-mutual
+relationship.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="resp">
+          <desc>contains a phrase describing the nature of a person's
+  intellectual responsibility.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="respStmt">
+          <desc>(statement of responsibility) supplies a statement of responsibility for someone responsible
+  for the intellectual content of a text, edition, recording, or
+  series, where the specialized elements for authors, editors, etc. do
+  not suffice or do not apply.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="revisionDesc">
+          <desc>(revision description) summarizes the revision history for a file.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="s">
+          <desc>(s-unit) contains a sentence-like division of a text.</desc>
+          <attList>
+            <attDef ident="n">
+              <desc>sequence number </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="samplingDecl">
+          <desc>(sampling declaration) contains a prose description of the rationale and methods used
+in sampling texts in the creation of a corpus or collection.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="setting">
+          <desc>(setting) describes one particular setting in which a language
+  interaction takes place.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="settingDesc">
+          <desc>(setting description) describes the setting or settings within which a language
+interaction takes place, either as a prose description or as a
+series of setting elements.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="shift">
+          <desc>(Shift) marks the point at which some paralinguistic feature of a series of
+utterances by any one speaker changes.</desc>
+          <attList>
+            <attDef ident="new">
+              <desc>specifies the new state of the paralinguistic feature specified.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="sourceDesc">
+          <desc>supplies a description of the source text(s) from
+which an electronic text was derived or generated.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="sp">
+          <desc>(speech) An individual speech in a performance text, or a passage
+	  presented as such in a prose or verse text.</desc>
+          <attList>
+            <attDef ident="who">
+              <desc>indicates the person, or group of
+	people, to whom the element content is ascribed.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="speaker">
+          <desc>A specialized form of heading or label, giving the name of
+one or more speakers in a dramatic text or fragment.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="stage">
+          <desc>(stage direction) contains any kind of stage direction within a dramatic text or
+fragment.</desc>
+          <attList>
+            <attDef ident="rend">
+              <desc>a code briefly characterising the way the element content was originally
+presented. </desc>
+              <valList>
+                <valItem ident="bo">
+                  <desc>bold weight font</desc>
+                </valItem>
+                <valItem ident="bx">
+                  <desc>boxed</desc>
+                </valItem>
+                <valItem ident="hi">
+                  <desc>superscript</desc>
+                </valItem>
+                <valItem ident="ib">
+                  <desc>italic and bold</desc>
+                </valItem>
+                <valItem ident="ih">
+                  <desc>italic superscript</desc>
+                </valItem>
+                <valItem ident="il">
+                  <desc>italic subscript</desc>
+                </valItem>
+                <valItem ident="it">
+                  <desc>italic font</desc>
+                </valItem>
+                <valItem ident="iu">
+                  <desc>italic and underlined</desc>
+                </valItem>
+                <valItem ident="lo">
+                  <desc>subscript</desc>
+                </valItem>
+                <valItem ident="qc">
+                  <desc>centre-aligned</desc>
+                </valItem>
+                <valItem ident="ro">
+                  <desc>roman within italic</desc>
+                </valItem>
+                <valItem ident="st">
+                  <desc>strike-out</desc>
+                </valItem>
+                <valItem ident="ub">
+                  <desc>bold underlined </desc>
+                </valItem>
+                <valItem ident="ul">
+                  <desc>underlined</desc>
+                </valItem>
+                <valItem ident="xx">
+                  <desc>crossed-out</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="stext">
+          <desc>contains a single spoken text, i.e. a transcription or
+collection of transcriptions from a single source. </desc>
+          <attList>
+            <attDef ident="type">
+              <desc>specifies the type of spoken  text. </desc>
+              <valList>
+                <valItem ident="CONVRSN">
+                  <desc>demographically sampled conversation</desc>
+                </valItem>
+                <valItem ident="OTHERSP">
+                  <desc>any other spoken text</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="tagUsage">
+          <desc>(tagUsage) supplies information about the usage of a specific element
+within a text. </desc>
+          <attList>
+            <attDef ident="gi">
+              <desc>the name (generic identifier)
+of the element indicated by the tag.</desc>
+            </attDef>
+            <attDef ident="occurs">
+              <desc>specifies the number of occurrences of this element within the text.
+ </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="tagsDecl">
+          <desc>(tagging declaration) provides information about the XML elements actually used within
+a BNC text</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="taxonomy">
+          <desc>(taxonomy) defines a typology used to classify texts either implicitly, by
+means of a bibliographic citation, or explicitly by a structured
+taxonomy.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="teiHeader">
+          <desc>(TEI Header) supplies the descriptive and declarative information making
+	up an electronic title page prefixed to every TEI-conformant
+	text.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="term">
+          <desc>contains a word or phrase used to describe the topic or nature of a text. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="wtext">
+          <desc>contains a single written text. </desc>
+          <attList>
+            <attDef ident="type">
+              <desc>specifies the type of written text.</desc>
+              <valList>
+                <valItem ident="ACPROSE">
+                  <desc>Academic prose</desc>
+                </valItem>
+                <valItem ident="FICTION">
+                  <desc>Fiction and verse</desc>
+                </valItem>
+                <valItem ident="NEWS">
+                  <desc>Newspapers</desc>
+                </valItem>
+                <valItem ident="NONAC">
+                  <desc>Non-academic prose and biography</desc>
+                </valItem>
+                <valItem ident="OTHERPUB">
+                  <desc>Other published materials</desc>
+                </valItem>
+                <valItem ident="UNPUB">
+                  <desc>Unpublished materials</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="textClass">
+          <desc>(text classification) groups information which describes the nature or topic of a text
+in terms of a standard classification scheme, thesaurus, etc.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="title">
+          <desc>contains the full title of a work of any kind.</desc>
+          <attList>
+            <attDef ident="level">
+              <desc>indicates the bibliographic level of this title</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="titleStmt">
+          <desc>(title statement) groups information about the title of a work and those
+responsible for its intellectual content.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="tokenize">
+          <desc>supplies any additional ICU-conformant rules to be used
+when tokenization is performed by xaira rather than by explicit XML markup. </desc>
+        </xairaItem>
+        <xairaItem type="element" ident="trunc">
+          <desc>contains one or more truncated words in transcribed speech.</desc>
+        </xairaItem>
+        <xairaItem type="element" ident="u">
+          <desc>(utterance) a stretch of speech usually preceded and followed by
+silence or by a change of speaker.</desc>
+          <attList>
+            <attDef ident="who">
+              <desc>indicates the person, or group of
+	people, to whom the element content is ascribed.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="unclear">
+          <desc>contains a word, phrase, or passage which cannot be transcribed
+with certainty because it is illegible or inaudible in the source.</desc>
+          <attList>
+            <attDef ident="dur">
+              <desc>(duration) indicates the duration of the element in minutes. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="valItem">
+          <desc>(value definition) contains a single value and gloss  pair for an attribute.</desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="valList">
+          <desc>(value list) contains one or more valItem elements defining possible
+  values for an attribute.</desc>
+          <attList>
+            <attDef ident="copyOf">
+              <desc>supplies the identifier of a previously-defined value list to be
+used at this point</desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>specifies the extensibility of the list of attribute values
+      specified.
+      </desc>
+              <valList>
+                <valItem ident="closed">
+                  <desc>(only the values specified are permitted.) </desc>
+                </valItem>
+                <valItem ident="semi">
+                  <desc>(all the values specified should be supported, but
+	  other values are legal and software should have appropriate
+	  fallback processing for them.
+	  ) </desc>
+                </valItem>
+                <valItem ident="open">
+                  <desc>(the values specified are sample values only.) </desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="valSource">
+          <desc>specifies where the indexer is to find a value. </desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>indicates the kind of value to be found. </desc>
+              <valList>
+                <valItem ident="element">
+                  <desc>element content. </desc>
+                </valItem>
+                <valItem ident="attribute">
+                  <desc>attribute content. </desc>
+                </valItem>
+                <valItem ident="pseudo">
+                  <desc>content returned by one of the pseudo-
+functions count(), sysid(), or lineno() </desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="caseFold">
+              <desc>indicates whether the value required should be casefolded or
+not. </desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="vocal">
+          <desc>(Vocalized semi-lexical) any vocalized but not necessarily lexical phenomenon, for example
+voiced pauses, non-lexical backchannels, etc.</desc>
+          <attList>
+            <attDef ident="desc">
+              <desc>provides a brief description of the vocal event</desc>
+            </attDef>
+            <attDef ident="dur">
+              <desc>(duration) indicates the duration of the element in minutes. </desc>
+            </attDef>
+            <attDef ident="who">
+              <desc>indicates the person, or group of
+	people, to whom the element content is ascribed.</desc>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="w">
+          <desc>(word) represents a grammatical (not necessarily orthographic) word.</desc>
+          <attList>
+            <attDef ident="pos">
+              <desc>supplies a simplified  part-of-speech code.</desc>
+              <valList>
+                <valItem ident="ADJ">
+                  <desc>adjective</desc>
+                </valItem>
+                <valItem ident="ADV">
+                  <desc>adverb</desc>
+                </valItem>
+                <valItem ident="ART">
+                  <desc>article</desc>
+                </valItem>
+                <valItem ident="CONJ">
+                  <desc>conjunction</desc>
+                </valItem>
+                <valItem ident="INTERJ">
+                  <desc>interjection</desc>
+                </valItem>
+                <valItem ident="PREP">
+                  <desc>preposition</desc>
+                </valItem>
+                <valItem ident="PRON">
+                  <desc>pronoun</desc>
+                </valItem>
+                <valItem ident="STOP">
+                  <desc>punctuation</desc>
+                </valItem>
+                <valItem ident="SUBST">
+                  <desc>substantive</desc>
+                </valItem>
+                <valItem ident="UNC">
+                  <desc>unclassified or non-lexical word</desc>
+                </valItem>
+                <valItem ident="VERB">
+                  <desc>verb</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="hw">
+              <desc>specifies the headword under which this lexical unit is
+      conventionally grouped, where known.</desc>
+            </attDef>
+            <attDef ident="c5">
+              <desc>supplies the CLAWS 5 code associated with this word.</desc>
+              <valList>
+                <valItem ident="AJ0">
+                  <desc>Adjective (general or positive) (e.g. good, old, beautiful)</desc>
+                </valItem>
+                <valItem ident="AJC">
+                  <desc>Comparative adjective (e.g. better, older)</desc>
+                </valItem>
+                <valItem ident="AJS">
+                  <desc>Superlative adjective (e.g. best, oldest)</desc>
+                </valItem>
+                <valItem ident="AT0">
+                  <desc>Article (e.g. the, a, an, no)</desc>
+                </valItem>
+                <valItem ident="AV0">
+                  <desc>General adverb: an adverb not subclassified as AVP or AVQ (see below) (e.g. often, well, longer (adv.), furthest.</desc>
+                </valItem>
+                <valItem ident="AVP">
+                  <desc>Adverb particle (e.g. up, off, out)</desc>
+                </valItem>
+                <valItem ident="AVQ">
+                  <desc>Wh-adverb (e.g. when, where, how, why, wherever) </desc>
+                </valItem>
+                <valItem ident="CJC">
+                  <desc>Coordinating conjunction (e.g. and, or, but)</desc>
+                </valItem>
+                <valItem ident="CJS">
+                  <desc>Subordinating conjunction (e.g. although, when)</desc>
+                </valItem>
+                <valItem ident="CJT">
+                  <desc>The subordinating conjunction that</desc>
+                </valItem>
+                <valItem ident="CRD">
+                  <desc>Cardinal number (e.g. one, 3, fifty-five, 3609)</desc>
+                </valItem>
+                <valItem ident="DPS">
+                  <desc>Possessive determiner-pronoun (e.g. your, their, his)</desc>
+                </valItem>
+                <valItem ident="DT0">
+                  <desc>General determiner-pronoun: i.e. a determiner-pronoun which is not a DTQ or an AT0. </desc>
+                </valItem>
+                <valItem ident="DTQ">
+                  <desc>Wh-determiner-pronoun (e.g. which, what, whose, whichever) </desc>
+                </valItem>
+                <valItem ident="EX0">
+                  <desc>Existential there, i.e. there occurring in the there is ... or there are ... construction</desc>
+                </valItem>
+                <valItem ident="ITJ">
+                  <desc>Interjection or other isolate (e.g. oh, yes, mhm, wow)</desc>
+                </valItem>
+                <valItem ident="NN0">
+                  <desc>Common noun, neutral for number (e.g. aircraft, data, committee) </desc>
+                </valItem>
+                <valItem ident="NN1">
+                  <desc>Singular common noun (e.g. pencil, goose, time, revelation)</desc>
+                </valItem>
+                <valItem ident="NN2">
+                  <desc>Plural common noun (e.g. pencils, geese, times, revelations)</desc>
+                </valItem>
+                <valItem ident="NP0">
+                  <desc>Proper noun (e.g. London, Michael, Mars, IBM) </desc>
+                </valItem>
+                <valItem ident="ORD">
+                  <desc>Ordinal numeral (e.g. first, sixth, 77th, last) .</desc>
+                </valItem>
+                <valItem ident="PNI">
+                  <desc>Indefinite pronoun (e.g. none, everything, one [as pronoun], nobody)</desc>
+                </valItem>
+                <valItem ident="PNP">
+                  <desc>Personal pronoun (e.g. I, you, them, ours)</desc>
+                </valItem>
+                <valItem ident="PNQ">
+                  <desc>Wh-pronoun (e.g. who, whoever, whom)</desc>
+                </valItem>
+                <valItem ident="PNX">
+                  <desc>Reflexive pronoun (e.g. myself, yourself, itself, ourselves)</desc>
+                </valItem>
+                <valItem ident="POS">
+                  <desc>The possessive or genitive marker 's or '</desc>
+                </valItem>
+                <valItem ident="PRF">
+                  <desc>The preposition of</desc>
+                </valItem>
+                <valItem ident="PRP">
+                  <desc>Preposition (except for of) (e.g. about, at, in, on, on behalf of, with)</desc>
+                </valItem>
+                <valItem ident="TO0">
+                  <desc>Infinitive marker to</desc>
+                </valItem>
+                <valItem ident="UNC">
+                  <desc>Unclassified items which are not appropriately considered as items of the English lexicon.</desc>
+                </valItem>
+                <valItem ident="VBB">
+                  <desc>The present tense forms of the verb BE, except for is, 's: i.e. am, are, 'm, 're and be [subjunctive or imperative]</desc>
+                </valItem>
+                <valItem ident="VBD">
+                  <desc>The past tense forms of the verb BE: was and were</desc>
+                </valItem>
+                <valItem ident="VBG">
+                  <desc>The -ing form of the verb BE: being</desc>
+                </valItem>
+                <valItem ident="VBI">
+                  <desc>The infinitive form of the verb BE: be</desc>
+                </valItem>
+                <valItem ident="VBN">
+                  <desc>The past participle form of the verb BE: been</desc>
+                </valItem>
+                <valItem ident="VBZ">
+                  <desc>The -s form of the verb BE: is, 's</desc>
+                </valItem>
+                <valItem ident="VDB">
+                  <desc>The finite base form of the verb BE: do</desc>
+                </valItem>
+                <valItem ident="VDD">
+                  <desc>The past tense form of the verb DO: did</desc>
+                </valItem>
+                <valItem ident="VDG">
+                  <desc>The -ing form of the verb DO: doing</desc>
+                </valItem>
+                <valItem ident="VDI">
+                  <desc>The infinitive form of the verb DO: do</desc>
+                </valItem>
+                <valItem ident="VDN">
+                  <desc>The past participle form of the verb DO: done</desc>
+                </valItem>
+                <valItem ident="VDZ">
+                  <desc>The -s form of the verb DO: does, 's</desc>
+                </valItem>
+                <valItem ident="VHB">
+                  <desc>The finite base form of the verb HAVE: have, 've</desc>
+                </valItem>
+                <valItem ident="VHD">
+                  <desc>The past tense form of the verb HAVE: had, 'd</desc>
+                </valItem>
+                <valItem ident="VHG">
+                  <desc>The -ing form of the verb HAVE: having</desc>
+                </valItem>
+                <valItem ident="VHI">
+                  <desc>The infinitive form of the verb HAVE: have</desc>
+                </valItem>
+                <valItem ident="VHN">
+                  <desc>The past participle form of the verb HAVE: had</desc>
+                </valItem>
+                <valItem ident="VHZ">
+                  <desc>The -s form of the verb HAVE: has, 's</desc>
+                </valItem>
+                <valItem ident="VM0">
+                  <desc>Modal auxiliary verb (e.g. will, would, can, could, 'll, 'd)</desc>
+                </valItem>
+                <valItem ident="VVB">
+                  <desc>The finite base form of lexical verbs (e.g. forget, send, live, return) [Including the imperative and present subjunctive]</desc>
+                </valItem>
+                <valItem ident="VVD">
+                  <desc>The past tense form of lexical verbs (e.g. forgot, sent, lived, returned)</desc>
+                </valItem>
+                <valItem ident="VVG">
+                  <desc>The -ing form of lexical verbs (e.g. forgetting, sending, living, returning)</desc>
+                </valItem>
+                <valItem ident="VVI">
+                  <desc>The infinitive form of lexical verbs (e.g. forget, send, live, return)</desc>
+                </valItem>
+                <valItem ident="VVN">
+                  <desc>The past participle form of lexical verbs (e.g. forgotten, sent, lived, returned)</desc>
+                </valItem>
+                <valItem ident="VVZ">
+                  <desc>The -s form of lexical verbs (e.g. forgets, sends, lives, returns)</desc>
+                </valItem>
+                <valItem ident="XX0">
+                  <desc>The negative particle not or n't </desc>
+                </valItem>
+                <valItem ident="ZZ0">
+                  <desc>Alphabetical symbols (e.g. A, a, B, b, c, d)</desc>
+                </valItem>
+                <valItem ident="AJ0-AV0">
+                  <desc>Probably AJ0 (adjective), but maybe AV0 (adverb)</desc>
+                </valItem>
+                <valItem ident="AJ0-NN1">
+                  <desc>Probably AJ0 (adjective), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVD">
+                  <desc>Probably AJ0 (adjective), but maybe VVD (verb past tense)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVG">
+                  <desc>Probably AJ0 (adjective), but maybe VVG (-ing verb)</desc>
+                </valItem>
+                <valItem ident="AJ0-VVN">
+                  <desc>Probably AJ0 (adjective), but maybe VVN (verb past participle)</desc>
+                </valItem>
+                <valItem ident="AV0-AJ0">
+                  <desc>Probably AV0 (adverb), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="AVP-PRP">
+                  <desc>Probably AVP (adverb particle), but maybe PRP (preposition)</desc>
+                </valItem>
+                <valItem ident="AVQ-CJS">
+                  <desc>Probably AVQ (wh- adverb), but maybe CJS (subordinating conjunction)</desc>
+                </valItem>
+                <valItem ident="CJS-AVQ">
+                  <desc>Probably CJS (subordinating conjunction), but maybe AVQ (wh- adverb)</desc>
+                </valItem>
+                <valItem ident="CJS-PRP">
+                  <desc>Probably CJS (subordinating conjunction), but maybe PRP (preposition)</desc>
+                </valItem>
+                <valItem ident="CJT-DT0">
+                  <desc>Probably CJT ("that" as conjunction), but maybe DT0 (determiner)</desc>
+                </valItem>
+                <valItem ident="CRD-PNI">
+                  <desc>Probably CRD (number), but maybe PNI (indefinite pronoun)</desc>
+                </valItem>
+                <valItem ident="DT0-CJT">
+                  <desc>Probably DT0 (determiner), but maybe CJT ("that" as conjunction)</desc>
+                </valItem>
+                <valItem ident="NN1-AJ0">
+                  <desc>Probably NN1 (singular noun), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="NN1-NP0">
+                  <desc>Probably NN1 (singular noun), but maybe NP0 (proper noun)</desc>
+                </valItem>
+                <valItem ident="NN1-VVB">
+                  <desc>Probably NN1 (singular noun), but maybe VVB (verb)</desc>
+                </valItem>
+                <valItem ident="NN1-VVG">
+                  <desc>Probably NN1 (singular noun), but maybe VVG (-ing verb)</desc>
+                </valItem>
+                <valItem ident="NN2-VVZ">
+                  <desc>Probably NN2 (plural noun), but maybe VVZ (-s verb)</desc>
+                </valItem>
+                <valItem ident="NP0-NN1">
+                  <desc>Probably NP0 (proper noun), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="PNI-CRD">
+                  <desc>Probably PNI (indefinite pronoun), but maybe CRD (number)</desc>
+                </valItem>
+                <valItem ident="PRP-AVP">
+                  <desc>Probably PRP (preposition), but maybe AVP (adverb particle)</desc>
+                </valItem>
+                <valItem ident="PRP-CJS">
+                  <desc>Probably PRP (preposition), but maybe CJS (subordinating conjunction)</desc>
+                </valItem>
+                <valItem ident="VVB-NN1">
+                  <desc>Probably VVB (verb), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="VVD-AJ0">
+                  <desc>Probably VVD (verb past tense), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="VVD-VVN">
+                  <desc>Probably VVD (verb past tense), but maybe VVN (verb past participle)</desc>
+                </valItem>
+                <valItem ident="VVG-AJ0">
+                  <desc>Probably VVG (-ing verb), but maybe AJ0 (adjective)</desc>
+                </valItem>
+                <valItem ident="VVG-NN1">
+                  <desc>Probably VVG (-ing verb), but maybe NN1 (singular noun)</desc>
+                </valItem>
+                <valItem ident="VVN-AJ0">
+                  <desc>Probably VVN (verb past participle), but maybe AJ0</desc>
+                </valItem>
+                <valItem ident="VVN-VVD">
+                  <desc>Probably VVN (verb past participle), but maybe VVD (verb past tense)</desc>
+                </valItem>
+                <valItem ident="VVZ-NN2">
+                  <desc>Probably VVZ (-s verb), but maybe NN2 (plural noun)</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="xairaItem">
+          <desc>provides data needed to define one part of a  xaira specification. </desc>
+          <attList>
+            <attDef ident="ident">
+              <desc>supplies a unique identifier.</desc>
+            </attDef>
+            <attDef ident="ns">
+              <desc>supplies the namespace within which the identifier is to be
+found. </desc>
+            </attDef>
+            <attDef ident="type">
+              <desc>indicates what is defined by this part of the specification.</desc>
+              <valList>
+                <valItem ident="element">
+                  <desc> an element and its attributes.</desc>
+                </valItem>
+                <valItem ident="form">
+                  <desc>a lexical form. </desc>
+                </valItem>
+                <valItem ident="addKey">
+                  <desc>an additional key. </desc>
+                </valItem>
+                <valItem ident="lemmaScheme">
+                  <desc>a lemmatization scheme.</desc>
+                </valItem>
+                <valItem ident="region">
+                  <desc>a region.</desc>
+                </valItem>
+                <valItem ident="textRef">
+                  <desc>the reference used to identify
+a document in the corpus.</desc>
+                </valItem>
+                <valItem ident="scopeRef">
+                  <desc>the default scope for results
+obtained from a corpus.</desc>
+                </valItem>
+                <valItem ident="unitRef">
+                  <desc>the reference used to identify
+some segmentation of a corpus document.</desc>
+                </valItem>
+                <valItem ident="indexPol">
+                  <desc>the indexing policy for some
+corpus component.</desc>
+                </valItem>
+                <valItem ident="defaultLang">
+                  <desc>the default language for
+a corpus. </desc>
+                </valItem>
+                <valItem ident="langRules">
+                  <desc>any additional tokenization or
+collation rules for some language used in a corpus. </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="xairaList">
+          <desc>contains a list of xaira parameters of a particular type</desc>
+          <attList>
+            <attDef ident="type">
+              <desc>indicates the function of this part of the specification.</desc>
+              <valList>
+                <valItem ident="elementSpec">
+                  <desc>lists and glosses the elements,
+attributes, and codebooks used in a corpus </desc>
+                </valItem>
+                <valItem ident="keySpec">
+                  <desc>specifies how items are to be indexed. </desc>
+                </valItem>
+                <valItem ident="lemmaSpec">
+                  <desc>specifies any lemmatization schemes
+used. </desc>
+                </valItem>
+                <valItem ident="rangeSpec">
+                  <desc>specifies any predefined ranges to be
+made available to the client. </desc>
+                </valItem>
+                <valItem ident="refSpec">
+                  <desc>specifies how items are to be referenced. </desc>
+                </valItem>
+                <valItem ident="indexSpec">
+                  <desc>specifies any special indexing
+policies. </desc>
+                </valItem>
+                <valItem ident="langSpec">
+                  <desc>specifies any language-specific rules. </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </xairaItem>
+        <xairaItem type="element" ident="xairaSpecification">
+          <desc>specifies additional information needed by xaira. </desc>
+        </xairaItem>
+      </xairaList>
+      <xairaList type="keySpec">
+        <xairaItem type="form">
+          <valSource type="element" ident="c"/>
+        </xairaItem>
+        <xairaItem type="form">
+          <valSource type="element" ident="w"/>
+        </xairaItem>
+        <xairaItem type="addKey" ident="c5">
+          <valSource type="attribute" ident="c5">
+            <nameList>
+              <gi>w</gi>
+<!--              <gi>mw</gi>-->
+              <gi>c</gi>
+            </nameList>
+            <defaultVal>XXX</defaultVal>
+          </valSource>
+        </xairaItem>
+        <xairaItem type="addKey" ident="Headword">
+          <valSource type="attribute" ident="hw">
+            <nameList>
+              <gi>w</gi>
+            </nameList>
+          </valSource>
+        </xairaItem>
+        <xairaItem type="addKey" ident="pos">
+          <valSource type="attribute" ident="pos">
+            <nameList>
+              <gi>w</gi>
+            </nameList>
+            <defaultVal>XXX</defaultVal>
+          </valSource>
+        </xairaItem>
+        <xairaItem ident="region" type="addKey">
+          <desc>defines the additional keys used to support filtering of text
+from different regions of selected texts</desc>
+          <valSource caseFold="false" ident="name()" type="pseudo">
+            <nameList>
+              <gi>stext</gi>
+              <gi>teiHeader</gi>
+              <gi>wtext</gi>
+            </nameList>
+            <defaultVal>nowhere</defaultVal>
+          </valSource>
+        </xairaItem>
+      </xairaList>
+      <xairaList type="lemmaSpec">
+        <xairaItem type="lemmaScheme" ident="BNC">
+          <nameList>
+            <ident>Headword</ident>
+            <ident>pos</ident>
+          </nameList>
+        </xairaItem>
+      </xairaList>
+      <xairaList type="regionSpec">
+        <xairaItem type="region" ident="textOnly">
+          <nameList>
+            <ident>region</ident>
+            <gi>stext</gi>
+            <gi>wtext</gi>
+          </nameList>
+        </xairaItem>
+        <xairaItem type="region" ident="speechOnly">
+          <nameList>
+            <ident>region</ident>
+            <gi>stext</gi>
+          </nameList>
+        </xairaItem>
+        <xairaItem type="region" ident="headerOnly">
+          <nameList>
+            <ident>region</ident>
+            <gi>teiHeader</gi>
+          </nameList>
+        </xairaItem>
+      </xairaList>
+      <xairaList type="refSpec">
+        <xairaItem type="textRef">
+          <valSource type="attribute" ident="id" ns="http://www.w3.org/XML/1998/namespace">
+            <nameList>
+              <gi>bncDoc</gi>
+            </nameList>
+          </valSource>
+        </xairaItem>
+        <xairaItem type="scopeRef">
+          <valSource type="attribute" ident="n">
+            <nameList>
+              <gi>s</gi>
+            </nameList>
+            <labelGen>%1.%2</labelGen>
+          </valSource>
+        </xairaItem>
+      </xairaList>
+      <xairaList type="indexSpec">
+        <xairaItem type="indexPol">
+          <attributePolicy ident="id" type="jointo" ns="http://www.w3.org/XML/1998/namespace">
+<!--            <nameList>
+              <gi>bncDoc</gi>
+              <gi>category</gi>
+              <gi>person</gi>
+              <gi>recording</gi>
+              <gi>setting</gi>
+              <gi>taxonomy</gi>
+            </nameList>-->
+          </attributePolicy>
+        </xairaItem>
+        <xairaItem type="indexPol">
+          <attributePolicy type="joinfrom" ident="who">
+            <nameList>
+              <gi>u</gi>
+            </nameList>
+            <joinTo>
+              <gi>person</gi>
+            </joinTo>
+          </attributePolicy>
+        </xairaItem>
+        <xairaItem type="indexPol">
+          <elementPolicy type="none" ident="revisionDesc"/>
+        </xairaItem>
+        <xairaItem type="indexPol">
+          <elementPolicy type="markup" ident="bibliography" ns="http://xaira.org/ns/1.0/bibliography"/>
+        </xairaItem>
+        <xairaItem type="indexPol">
+          <attributePolicy ident="targets" type="taxonomy">
+            <nameList>
+              <gi>catRef</gi>
+            </nameList>
+          </attributePolicy>
+        </xairaItem>
+<!--        <xairaItem type="indexPol">
+          <attributePolicy ident="type" type="taxonomy">
+            <nameList>
+              <gi>wtext</gi>
+              <gi>stext</gi>
+            </nameList>
+          </attributePolicy>
+        </xairaItem>-->
+      </xairaList>
+      <xairaList type="langSpec">
+        <xairaItem type="defaultLang" ident="en-GB"/>
+      </xairaList>
+    </xairaSpecification>
+  </encodingDesc>
+  <profileDesc>
+    <creation date=""/>
+    <langUsage>
+      <language ident="en-GB">The language of the British National Corpus is modern British English. Words,
+fragments, and passages from many other languages, both ancient and modern, occur
+within the corpus where these may be represented using a Latin alphabet. Long
+passages in these languages, and material in other languages, are generally silently
+deleted. </language>
+    </langUsage>
+    <particDesc>
+      <person ageGroup="X" dialect="NONE" n="W0000" role="other" sex="u" soc="UU" xml:id="PS000">
+        <persName>Unknown speaker</persName>
+      </person>
+      <person ageGroup="X" dialect="NONE" n="W000M" role="other" sex="u" soc="UU" xml:id="PS001">
+        <persName>Group of unknown speakers</persName>
+      </person>
+    </particDesc>
+  </profileDesc>
+  <revisionDesc>
+    <change date="2007-01-23">introduce wtext</change>
+    <change date="2006-11-07">finalize header generation script</change>
+    <change date="2006-10-07">add taxonomy descs and tax indexpol</change>
+    <change date="2006-10-01">autogenerated xairaspec from bncxmlodd</change>
+    <change date="2006-08-09">handedits following newhrdgen.xsl</change>
+    <change date="2004-06-12">Last Xaira index run</change>
+    <change date="2003-08-12">Final manual check before delivery to OU; revised taxonomy definitions</change>
+    <change date="2000-10-11">Final manual corrections for BNC-W</change>
+    <change date="2000-10-18">Further manual corrections for BNC-W</change>
+    <change date="2000-01-08">Manually changed catdescriptions etc. for BNC-W</change>
+    <change date="1994-11-30">Corpus Revision</change>
+  </revisionDesc>
+</teiHeader>
