@@ -1,0 +1,59 @@
+word-index,word,sentence-index,text-index,POS
+1,BEING ,1,1,VERB
+2,DRAWN ,1,1,VERB
+3,TO ,1,1,PREP
+4,AN ,1,1,ART
+5,IMAGE,1,1,SUBST
+6,Guy ,2,1,SUBST
+7,Brett,2,1,SUBST
+8,Why ,3,1,ADV
+9,do ,3,1,VERB
+10,certain ,3,1,ADJ
+11,images ,3,1,SUBST
+12,matter ,3,1,VERB
+13,to ,3,1,PREP
+14,one,3,1,ADJ
+15,and ,3,1,CONJ
+16,why ,3,1,ADV
+17,is ,3,1,VERB
+18,the ,3,1,ART
+19,desire ,3,1,SUBST
+20,to ,3,1,PREP
+21,answer ,3,1,VERB
+22,this ,3,1,ADJ
+23,question ,3,1,SUBST
+24,as ,3,1,ADV
+25,involuntary ,3,1,ADJ
+26,as ,3,1,CONJ
+27,the ,3,1,ART
+28,response ,3,1,SUBST
+29,itself,3,1,PRON
+30,Why ,4,1,ADV
+31,does ,4,1,VERB
+32,it ,4,1,PRON
+33,seem ,4,1,VERB
+34,important ,4,1,ADJ
+35,that ,4,1,CONJ
+36,the ,4,1,ART
+37,answer ,4,1,SUBST
+38,should ,4,1,VERB
+39,have ,4,1,VERB
+40,some ,4,1,ADJ
+41,objective,4,1,ADJ
+42,quality ,4,1,SUBST
+43,about ,4,1,PREP
+44,it,4,1,PRON
+45,an ,4,1,ART
+46,insight ,4,1,SUBST
+47,into ,4,1,PREP
+48,history,4,1,SUBST
+49,society,4,1,SUBST
+50,knowledge,4,1,SUBST
+51,rather ,4,1,ADV
+52,than ,4,1,CONJ
+53,point ,4,1,VERB
+54,to ,4,1,PREP
+55,a ,4,1,ART
+56,merely ,4,1,ADV
+57,personal ,4,1,ADJ
+58,obsession,4,1,SUBST
