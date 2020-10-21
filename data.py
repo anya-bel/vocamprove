@@ -1,167 +1,145 @@
 from xml.etree import ElementTree as ET
 import csv
 import glob
-import pandas as pd
-import numpy as np
-from itertools import chain
-import spacy
 import time
+import pathlib
+import pandas as pd
+
 startTime = time.time()
 
-#---------------------------------------------------------------------------------
-#-----SET-UP-DATA-FILES-----------------------------------------------------------
-#---------------------------------------------------------------------------------
-#-----------------SETTING UP 3 CSV FILES------------------------------------------
-# STORING: INDIVIDUAL WORDS, SENTENCES AND TEXTS----------------------------------
-#---------------------------------------------------------------------------------
 
-# define path to store data
-data_path = r'data/'
+# (list of POS tags in annotated corpus)
+# data_path = r'data/'
+# with open((data_path + 'words.csv'), "r", newline='', encoding='utf-8') as file:
+#    df=pd.read_csv(file)
+#    print(set(df.POS))
 
-# set up words.csv file
-with open((data_path + 'words.csv'), "w", newline='', encoding='utf-8') as file:
+# SET UP CSV FILES FOR STORING DATA
+def create_csv():
+    # Define path to store CSV files.
+    data_path = r'data/'
 
-    # create the csv writer object
-    csvwriter = csv.writer(file)
+    fieldnames_w = ['word-index', 'word', 'sentence-index', 'text-index', 'POS']
+    fieldnames_s = ['sentence-index', 'sentence', 'text-index']
+    fieldnames_t = ['text-index', 'genre', 'complexity']
 
-    # write column names
-    col_names = ['word-index','word','sentence-index','text-index','POS']
-    csvwriter.writerow(col_names)
-
-# set up sentences.csv file
-with open((data_path + 'sentences.csv'), "w", newline='', encoding='utf-8') as file:
-
-    # create the csv writer object
-    csvwriter = csv.writer(file)
-
-    # write column names
-    col_names = ['sentence-index','sentence','text-index']
-    csvwriter.writerow(col_names)
-    print('sentences.csv created')
-    
-# set up text.csv file
-with open((data_path + 'texts.csv'), "w", newline='', encoding='utf-8') as file:
-
-    # create the csv writer object
-    csvwriter = csv.writer(file)
-
-    # write column names
-    col_names = ['text-index','genre','complexity']
-    csvwriter.writerow(col_names)
-
-
-    
-#----------------------------------
-#-----RETRIEVE-VALUES-FROM-XML-----
-#-----FILL-CSV-FILE-W/-VALUES------
-#----------------------------------
-
-# define path of the XML files
-xml_path = r'Texts/**/*.xml'
-
-# set counters for increasing variables
-text_index = 0
-genres = {'a': 'academic','d': 'conversations', 'f': 'fiction', 'n': 'news'}
-
-# iterate through each XML file
-for f in glob.iglob(xml_path):
-
-    sentence_index = 0
-
-    #assign text index var to be used in words.csv and text.csv
-    text_index += 1
-
-    # TO DO ► find complexity score
-    complexity = 0
-
-    # find genre
-# TO DO ► substitute with RegEx
-    genre = genres[f[6]]
-
-    # open words.csv in append mode
-    with open((data_path + 'texts.csv'), "a", newline='', encoding='utf-8') as file:
-
-        # create the csv writer object
+    # Set up words.csv file.
+    with open((data_path + 'words.csv'), "w", newline='', encoding='utf-8') as file:
         csvwriter = csv.writer(file)
-        csvwriter.writerow([text_index, genre, complexity])
+        csvwriter.writerow(fieldnames_w)
+
+    # Set up sentences.csv file.
+    with open((data_path + 'sentences.csv'), "w", newline='', encoding='utf-8') as file:
+        csvwriter = csv.writer(file)
+        csvwriter.writerow(fieldnames_s)
+
+    # Set up text.csv file.
+    with open((data_path + 'texts.csv'), "w", newline='', encoding='utf-8') as file:
+        csvwriter = csv.writer(file)
+        csvwriter.writerow(fieldnames_t)
 
 
-    # import XML file
-    with open(f, 'r', encoding='utf-8') as f:
-        tree = ET.parse(f)
-        root = tree.getroot()
+# RETRIEVE VALUES FROM XML AND STORE THEM IN CSV FILES
+def from_xml_to_csv():
+    # Define path of the XML files.
+    xml_path = r'Texts/**/*.xml'
 
-        # iterate through sentences
-        for s in root.iter('s'):
+    # Define path to store CSV files.
+    data_path = r'data/'
 
-            word_index = 0
-            sentence_index += 1
+    # Set counter.
+    text_index = 0
 
-            #assign sentence_index var
-            # sentence_index = int(s.attrib['n'])
+    genres = {'a': 'academic', 'd': 'conversations', 'f': 'fiction', 'n': 'news'}
 
-            sentence_as_word_list = []
+    # Iterate through each XML file.
+    for f in glob.iglob(xml_path):
 
-            ## (for debugging)
-            #if sentence_index == 5:
+        # Set counter.
+        sentence_index = 0
+
+        # Increase text counter each time a file is opened.
+        text_index += 1
+
+        # TO DO ► Find complexity score.
+        complexity = 0
+
+        # Find genre based on path of the file.
+        dir = pathlib.PurePath(f).parts[-2]
+        genre = genres[dir[0]]
+
+        # Store text data.
+        with open((data_path + 'texts.csv'), "a", newline='', encoding='utf-8') as file:
+
+            csvwriter = csv.writer(file)
+            csvwriter.writerow([text_index, genre, complexity])
+
+        # import XML file
+        with open(f, 'r', encoding='utf-8') as f:
+            tree = ET.parse(f)
+            root = tree.getroot()
+
+            # iterate through sentences
+            for s in root.iter('s'):
+
+                word_index = 0
+                sentence_index += 1
+
+                # assign sentence_index var
+                # sentence_index = int(s.attrib['n'])
+
+                units = []
+
+                ## (for debugging)
+                # if sentence_index == 5:
+                #    break
+
+                # iterate through units in each sentence
+                for u in list(s):
+
+                    unit = ET.tostring(u, encoding='utf-8')
+
+
+                    # if unit is a word, extract pos
+                    if str(unit)[3] == 'w':
+
+                        word = u.text
+                        word_index = word_index + 1
+
+                        # assign pos var to be used in texts.csv
+                        pos = u.attrib['pos']
+
+                        # open words.csv in append mode
+                        with open((data_path + 'words.csv'), "a", newline='', encoding='utf-8') as file:
+                            # create the csv writer object
+                            csvwriter = csv.writer(file)
+                            csvwriter.writerow([word_index, word, sentence_index, text_index, pos])
+
+                    # assign word var to be used in words.csv
+                    unit = u.text
+
+                    # store word into sentence
+                    if unit is not None:
+                        units.append(unit)
+                        sentence = ''.join(units)
+
+                # set up sentences.csv file
+                with open((data_path + 'sentences.csv'), "a", newline='', encoding='utf-8') as file:
+
+                    # create the csv writer object
+                    csvwriter = csv.writer(file)
+
+                    # write column names
+                    csvwriter.writerow([sentence_index, sentence, text_index])
+
+            # (for debugging)
+            #if text_index == 5:
             #    break
 
-            # iterate through units in each sentence
-            for u in list(s):
 
-                ## iterate through words in each sentence
-                #for w in s.iter('w'):
-                
-                unit = ET.tostring(u, encoding='unicode')
-
-                # if unit is a word, extract POS
-                if unit[1] == ('w'):
-                    word = u.text
-                    word_index = word_index + 1
-
-                    #assign POS var to be used in texts.csv
-                    POS = u.attrib['pos']
-                    
-                    # open words.csv in append mode
-                    with open((data_path + 'words.csv'), "a", newline='', encoding='utf-8') as file:
-
-                        # create the csv writer object
-                        csvwriter = csv.writer(file)
-                        csvwriter.writerow([word_index, word, sentence_index, text_index, POS])                
-
-                #assign word var to be used in words.csv
-                unit = u.text
-
-                # store word into sentence
-                if unit is not None:
-                    sentence_as_word_list.append(unit)
-                    sentence = ''.join(sentence_as_word_list)
-
-
-            # set up sentences.csv file
-            with open((data_path + 'sentences.csv'), "a", newline='', encoding='utf-8') as file:
-
-                # create the csv writer object
-                csvwriter = csv.writer(file)
-
-                # write column names
-                csvwriter.writerow([sentence_index, sentence, text_index])
-
-        ## (for debugging)
-        #if  text_index == 5:
-        #    break
-
-
-                    
-#---------------------------------------------------------------------------------
-#-----TURN-CSV-INTO-DF------------------------------------------------------------
-#---------------------------------------------------------------------------------
-
-
-    
-    
-#if __name__ == "__main__":convert_to_csv()
-
+if __name__ == "__main__":
+    create_csv()
+    from_xml_to_csv()
 
 executionTime = (time.time() - startTime)
 print('Execution time in seconds: ' + str(executionTime))
