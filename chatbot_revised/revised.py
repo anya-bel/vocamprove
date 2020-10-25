@@ -125,7 +125,7 @@ def preferred_genre(update, context):
     
     
 def main():
-    updater = Updater("1396991091:AAHAR59Au-Rqd4q5ZcXQ0qID0W-4RVepc7I", use_context=True)
+    updater = Updater("1239802799:AAGS-N9DZWpzTHjYm1pcXQ6sChzQVpuQQqA", use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('ready', ready))
