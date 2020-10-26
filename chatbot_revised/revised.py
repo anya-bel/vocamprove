@@ -12,6 +12,7 @@ from telegram.ext import (
 import json
 import logging, time
 
+# maakes the quiz object everytime a user starts the test
 class Quiz:
     def __init__(self , update=None , Questions='Questions.json'):
         self.update=update
@@ -19,7 +20,8 @@ class Quiz:
         self.correct_words=0
         self.correct_non_words=0
         self.answered=0
-    
+
+# fetches the next word to be asked    
     def get_next_word(self):
         with open(self.Questions) as json_file:
             self.data = json.load(json_file)
@@ -28,6 +30,7 @@ class Quiz:
         except:
             return None
     
+# gets the answer of the poll as input and updates quiz results
     def update_result(self , count):
         if self.answered>2:
             with open(self.Questions) as json_file:
@@ -38,13 +41,19 @@ class Quiz:
                 self.correct_words+=1
         self.answered+=1
         
-    def score(self):
+# calculates the user's final score based on the formula
+        def score(self):
         return ((self.correct_words/40*100) + (self.correct_non_words/20*100))/2
     
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
+# creates the quiz instance upon the interaction 
 q=Quiz()
+
+# called when the user enters the start command
+# introduces the bot and asks the user to participate in the test
 def start(update, context):
     me = context.bot.get_me()
     msg = (f"Hello!\n I'm {me.first_name} and I came here to help you improve your vocabulary.\n"
@@ -56,6 +65,9 @@ def start(update, context):
                                                    resize_keyboard=True,
                                                    one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+
+# called when the user enters the ready command    
+# explains the test to the user and asks the user to start
 def ready(update, context):
     msg = ("This test consists of about 60 trials, in each of which you will see a string of letters. "
       "Your task is to decide whether this is an existing English word or not. "
@@ -74,10 +86,17 @@ def ready(update, context):
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard,resize_keyboard=True,one_time_keyboard=True)                                                 
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
 
+
+# called when the user enters the stop command
+# sends the message and deletes the quiz instance
 def stop(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Ok, no problem. See you next time then!")
     del q
 
+
+# called when the user enters the test command
+# sets the update attribute of the quiz object and reset other attribues in order to start the test multiple times
+# if theres no word left to be asked, calls the end_test function, else gets next word from quiz object, makes the poll and send it
 def test(update, context):
     if update.effective_message != None:
         q.update=update
@@ -92,7 +111,11 @@ def test(update, context):
     message = q.update.message.reply_poll(question, options, type=Poll.QUIZ, correct_option_id=word[2])
     payload = {message.poll.id: { "chat_id": q.update.effective_chat.id,"message_id": message.message_id}}
     context.bot_data.update(payload)
-        
+
+
+# used when the user enters the answer to a poll
+# gets the user's answer and call the update_result method of the quiz object
+# calls the test function to send the next poll or end the test
 def receive_quiz_answer(update, context):
     if update.poll.total_voter_count == 1:
         correct = update.poll.correct_option_id
@@ -100,13 +123,17 @@ def receive_quiz_answer(update, context):
         q.update_result(res)
     test(update, context)
 
+
+# called when the user enters there is no word to ask
+# calls the score method of the quiz object and sends the result to the user
+# calls the preferred_genre function
 def end_test(update, context):
     score=q.score()
     context.bot.send_message(chat_id=update.effective_chat.id, text=f'You finished the test! Great job, you got a score of {q.score()}!')
     
     preferred_genre(update, context)
 
-    
+# asks the user to select preferred genre using keyboard buttons    
 def preferred_genre(update, context):
     msg = ("Now that I now your current vocabulary level, I can find a text that matches it.\n"
       "But first, tell me a bit more about you. "
@@ -125,14 +152,21 @@ def preferred_genre(update, context):
     
     
 def main():
+# creates the updater object to provide a frontend to bot. it receives the updates from Telegram 
     updater = Updater("1239802799:AAGS-N9DZWpzTHjYm1pcXQ6sChzQVpuQQqA", use_context=True)
+# Dispatcher handles the updates and dispatches them to the handlers
     dp = updater.dispatcher
+# command handlers Handler instance to handle Telegram commands.
+# Commands are Telegram messages that start with /  
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('ready', ready))
     dp.add_handler(CommandHandler('stop', stop))
     dp.add_handler(CommandHandler('test', test))
+# Handler instance to handle Telegram updates that contain a poll
     dp.add_handler(PollHandler(receive_quiz_answer))
+# Starts polling updates from Telegram
     updater.start_polling()
+# Blocks until one of the signals are received and stops the updater
     updater.idle()
 
 
