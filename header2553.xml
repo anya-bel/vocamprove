@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader type="ISBD-ER">
+      <fileDesc>
+         <titleStmt>
+            <title type="main">British National Corpus, Baby edition</title>
+            <title type="alternative">BNC Baby</title>
+            <author>BNC Consortium</author>
+            <funder>Department of Trade and Industry</funder>
+         </titleStmt>
+         <extent>
+            <seg type="designation">CollectionText</seg>
+            <seg type="size">182 files: ca. 195 MB</seg>
+         </extent>
+         <publicationStmt>
+            <authority>deposited by Martin Wynne<name type="person"/>
+               <name type="institution">University of Oxford</name>
+               <name type="place">Oxford</name>
+               <address>[Depositor details removed]</address>
+               <date>2011-04-15</date>
+            </authority>
+            <distributor>
+               <orgName type="OTA">Oxford Text Archive</orgName>
+               <placeName>Oxford</placeName>
+               <address>
+                  <orgName type="OTA">Oxford Text Archive</orgName>
+                  <orgName type="Bodleian">Bodleian Libraries</orgName>
+                  <addrLine>Broad St</addrLine>
+                  <addrLine>Oxford</addrLine>
+                  <addrLine>OX1 3BG</addrLine>
+               </address>
+               <email>ota@bodleian.ox.ac.uk</email>
+            </distributor>
+            <idno type="OTA">2553</idno>
+            <idno type="ota">2553</idno>
+	           <idno type="PURL">http://purl.ox.ac.uk/ota/2553</idno>
+            <availability n="OTA-new" status="free" rend="visible">
+               <licence target="http://www.natcorp.ox.ac.uk/docs/licence.html">
+	  Distributed by the University of Oxford under the BNC User Licence.  Clicking to download implies acceptance of the licence conditions.</licence>
+            </availability>
+            <date>2007-03-06</date>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary">
+               <p>British National Corpus is a snapshot of British English in the early 1990s. 
+          The British National Corpus is:
+          <list>
+                     <item>a sample corpus: composed of text samples generally no longer than 45,000 words.</item>
+                     <item>a synchronic corpus: the corpus includes imaginative texts from 1960, informative texts from 1975.</item>
+                     <item>a general corpus: not specifically restricted to any particular subject field, register or genre.</item>
+                     <item>a monolingual British English corpus: it comprises text samples which are substantially the product of speakers of British English.</item>
+                     <item>a mixed corpus: it contains examples of both spoken and written language.</item>
+                  </list>
+               </p>
+               <p>
+            BNC Baby consists of four one-million-word genre-based subsets (academic, fiction, newspaper and conversation), in XML with added lemma information and additional, simplified POS-tags for each word.   The corpus is described in full at  http://www.natcorp.ox.ac.uk/corpus/babyinfo.html. 
+        </p>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+            <bibl>Instant secure online access <relatedItem type="secureAccess"
+                            target="http://ota.oerc.ox.ac.uk/secure/newota/2553.zip"/> (currently only available for UK users with Shibboleth, and via EduGAIN)
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>
+          The BNC was originally created by an academic-industrial consortium whose original members were:
+          <list>
+                  <item>Oxford University Press</item>
+                  <item>Longman Group Ltd</item>
+                  <item>Chambers Harrap</item>
+                  <item>Oxford University Computing Services</item>
+                  <item>Unit for Computer Research on the English Language (Lancaster University)</item>
+                  <item>British Library Research and Development Department</item>
+               </list>
+            </p>
+            <p> Creation of the corpus was funded by the UK Department of Trade and Industry and the Science and Engineering Research Council under grant number IED4/1/2184 (1991-1994), within the DTI/SERC Joint Framework for Information Technology. Additional funding was provided by the British Library and the British Academy.
+          Maintenance, distribution, and development of the corpus has been carried out at Oxford University Computing Services. There have been three major revisions of the corpus:
+          <list>
+                  <item>BNC 1.0 (1995)</item>
+                  <item>BNC World Edition (2000)</item>
+                  <item>BNC XML Edition (2007)</item>
+               </list>
+            </p>
+         </projectDesc>
+         <editorialDecl>
+            <p>Encoding format: TEI XML</p>
+         </editorialDecl>
+         <classDecl>
+            <taxonomy xml:id="OTASH">
+               <bibl>University of Oxford Text Archive Subject Headings</bibl>
+            </taxonomy>
+            <taxonomy xml:id="LCSH">
+               <bibl>Library of Congress Subject Headings</bibl>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>1991-1994</date>
+         </creation>
+         <langUsage>
+            <language ident="eng">English</language>
+         </langUsage>
+         <textClass>
+            <keywords scheme="#OTASH">
+               <term type="genre">Linguistic corpora</term>
+            </keywords>
+            <keywords scheme="#OTASH">
+               <term type="resource_type">Corpus</term>
+            </keywords>
+            <keywords scheme="#LCSH">
+               <term type="genre">Linguistics</term>
+            </keywords>
+            <keywords scheme="#LCSH">
+               <term type="genre">Linguistics analysis (Linguistics)</term>
+            </keywords>
+         </textClass>
+         <textClass>
+            <keywords scheme="http://www.ota.ox.ac.uk/processing">
+               <term type="class">corpus</term>
+               <term type="license">BNC User Licence</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+	        <change>
+            <date>2013-11-19</date>
+            <label>cataloguer</label>
+            <name>Wynne, Martin</name>Linked to resource and made live</change>
+         <change>
+            <date>2011-04-15</date>
+            <label>cataloguer</label>
+            <name>Wynne, Martin</name>TEIXML
+        header composed </change>
+      </revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <div type="OTA-filemap" rend="visible" n="unrestricted">
+            <ab type="dir">
+               <seg type="part">1</seg>
+               <ptr type="resourcePart" target="download"/>
+            </ab>
+         </div>
+      </body>
+  </text>
+</TEI>
