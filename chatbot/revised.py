@@ -42,7 +42,7 @@ class Quiz:
         self.answered+=1
         
 # calculates the user's final score based on the formula
-        def score(self):
+    def score(self):
         return ((self.correct_words/40*100) + (self.correct_non_words/20*100))/2
     
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -107,7 +107,7 @@ def test(update, context):
         return end_test(q.update, context)
     options = ["No", "Yes"]
     word = q.get_next_word()
-    question = f'{str(word[0])}. Does the word "{word[1]}" exist?'
+    question = f'{str(max((int(word[0])-3),0))}. Does the word "{word[1]}" exist?'
     message = q.update.message.reply_poll(question, options, type=Poll.QUIZ, correct_option_id=word[2])
     payload = {message.poll.id: { "chat_id": q.update.effective_chat.id,"message_id": message.message_id}}
     context.bot_data.update(payload)
