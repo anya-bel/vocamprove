@@ -71,15 +71,15 @@ def start(update, context):
 def ready(update, context):
     msg = ("This test consists of about 60 trials, in each of which you will see a string of letters. "
       "Your task is to decide whether this is an existing English word or not. "
-      "If you think it is an existing English word, you click on \"yes\", and if you think it is not an existing English word, you click on \"no\".\n\n"
-      "If you are sure that the word exists, even though you don’t know its exact meaning, you may still respond \"yes\". "
-      "But if you are not sure if it is an existing word, you should respond \"no\".\n\n"
+      "If you think it is an existing English word, select \"yes\", and if you think it is not an existing English word, select \"no\".\n\n"
+      "If you are sure that the word exists, even though you don’t know its exact meaning, you should still respond \"yes\". "
+      "However, if you are not sure if it is an existing word or not, you should respond \"no\".\n\n"
       "In this experiment, we use British English rather than American English spelling. "
       "For example: \"realise\" instead of \"realize\"; \"colour\" instead of \"color\", and so on. "
-      "Please don’t let this confuse you. "
-      "This experiment is not about detecting such subtle spelling differences anyway.\n\n"
+      "Please don’t let this confuse you: "
+      "this experiment is not about detecting such subtle spelling differences.\n\n"
       "You have as much time as you like for each decision. This part of the experiment will take about 5 minutes.\n"
-      "If everything is clear, you can now start the experiment.\n\n"
+      "If everything is clear, you can now start the test.\n\n"
       "/test - Start the test.\n"
       "/stop - We'll do it later\n\n")
     main_menu_keyboard = [[KeyboardButton('/test')],[KeyboardButton('/stop')]]
@@ -135,13 +135,13 @@ def end_test(update, context):
 
 # asks the user to select preferred genre using keyboard buttons    
 def preferred_genre(update, context):
-    msg = ("Now that I now your current vocabulary level, I can find a text that matches it.\n"
+    msg = ("Now that I know your current vocabulary level, I can find something you might enjoy reading.\n"
       "But first, tell me a bit more about you. "
       "What do you prefer reading?\n\n"
-      "/fiction - I love fiction, want to read this kind of texts!\n"
-      "/academic - I prefer reading serious papers\n"
-      "/news - I want to get informed about news!\n"
-      "/conversations - I prefer something more natural.")
+      "/fiction - I love fiction, and would love to read this kind of texts!\n"
+      "/academic - I like reading studies and essays.\n"
+      "/news - I want to read stories about real life events.\n"
+      "/conversations - I prefer something more casual.")
     main_menu_keyboard = [[KeyboardButton('/fiction')],
                           [KeyboardButton('/academic')],
                           [KeyboardButton('/news')],
