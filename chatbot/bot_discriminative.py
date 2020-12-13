@@ -89,7 +89,7 @@ def common_message(update, context):
                  int(context.user_data['quiz']['current_res'])==1):
                 context.user_data['quiz']['correct_words']+=1
         if(int(context.user_data['quiz']['current_qid'])< 63):
-            with open('Questions60.json') as json_file:
+            with open('Questions.json') as json_file:
                 data = json.load(json_file)
             word = [str(context.user_data['quiz']['current_qid']+1),
                     data[str(context.user_data['quiz']['current_qid']+1)]["word"],
