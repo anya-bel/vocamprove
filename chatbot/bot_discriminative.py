@@ -79,16 +79,18 @@ def common_message(update, context):
             context.user_data['quiz']['correct_nonwords']=0
             context.user_data['quiz']['current_qid']=0
         else:
+            if (msg.text=='No' and int(context.user_data['quiz']['current_res'])==0):
+                context.bot.send_message(msg.chat_id, text="Correct answer!")
+                if context.user_data['quiz']['current_qid']>3:
+                    context.user_data['quiz']['correct_nonwords']+=1
+            elif (msg.text=='Yes' and int(context.user_data['quiz']['current_res'])==1):
+                context.bot.send_message(msg.chat_id, text="Correct answer!")
+                if context.user_data['quiz']['current_qid']>3:
+                    context.user_data['quiz']['correct_words']+=1
+            else:
+                context.bot.send_message(msg.chat_id, text="Wrong answer...")
 
-            if(context.user_data['quiz']['current_qid']>3 and
-               msg.text=='No' and
-               int(context.user_data['quiz']['current_res'])==0):
-                context.user_data['quiz']['correct_nonwords']+=1
-            elif(context.user_data['quiz']['current_qid']>3 and
-                 msg.text=='Yes' and
-                 int(context.user_data['quiz']['current_res'])==1):
-                context.user_data['quiz']['correct_words']+=1
-        if(int(context.user_data['quiz']['current_qid'])< 63):
+        if (int(context.user_data['quiz']['current_qid'])< 63):
             with open('Questions.json') as json_file:
                 data = json.load(json_file)
             word = [str(context.user_data['quiz']['current_qid']+1),
