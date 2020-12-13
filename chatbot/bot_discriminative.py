@@ -198,7 +198,7 @@ def main():
     dp.add_handler(CommandHandler('explanations', split_words))
 
 # message handlers
-dp.add_handler(MessageHandler(Filters.text & (~Filters.command), common_message))
+    dp.add_handler(MessageHandler(Filters.text & (~Filters.command), common_message))
 #     dp.add_handler(MessageHandler(Filters.text & (~Filters.command), message))
 # Handler instance to handle Telegram updates that contain a poll
 
