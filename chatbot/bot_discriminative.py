@@ -30,7 +30,6 @@ logger = logging.getLogger(__name__)
 # introduces the bot and asks the user to participate in the test
 def start(update, context):
     me = context.bot.get_me()
-    participants[update.effective_user.id]=Quiz(update)
     msg = (f"Hello!\n I'm {me.first_name} and I came here to help you improve your vocabulary.\n"
            "First, I need to know your current level.\n Are you ready to take the test?\n"
            "/ready - Let's start the test!\n /stop - We'll do it later\n\n")
