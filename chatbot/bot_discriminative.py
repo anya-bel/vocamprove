@@ -54,7 +54,7 @@ def ready(update, context):
       "this experiment is not about detecting such subtle spelling differences.\n\n"
       "You have as much time as you like for each decision. This part of the experiment will take about 5 minutes.\n"
       "If everything is clear, you can now start the test.\n\n"
-      "/test - Start the test.\n"
+      "test - Start the test.\n"
       "/stop - We'll do it later\n\n")
     main_menu_keyboard = [[KeyboardButton('test')],[KeyboardButton('/stop')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard,resize_keyboard=True,one_time_keyboard=True)
@@ -65,7 +65,7 @@ def ready(update, context):
 # sends the message and deletes the quiz instance
 def stop(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Ok, no problem. See you next time then!")
-    
+
 
 
 
@@ -80,12 +80,12 @@ def common_message(update, context):
             context.user_data['quiz']['current_qid']=0
         else:
 
-            if(context.user_data['quiz']['current_qid']>3 and 
-               msg.text=='No' and 
+            if(context.user_data['quiz']['current_qid']>3 and
+               msg.text=='No' and
                int(context.user_data['quiz']['current_res'])==0):
                 context.user_data['quiz']['correct_nonwords']+=1
-            elif(context.user_data['quiz']['current_qid']>3 and 
-                 msg.text=='Yes' and 
+            elif(context.user_data['quiz']['current_qid']>3 and
+                 msg.text=='Yes' and
                  int(context.user_data['quiz']['current_res'])==1):
                 context.user_data['quiz']['correct_words']+=1
         if(int(context.user_data['quiz']['current_qid'])< 63):
@@ -103,8 +103,8 @@ def common_message(update, context):
             context.bot.send_message(msg.chat_id, text=question, reply_markup=reply_kb)
             context.user_data['quiz']['current_qid'] = int(word[0])
             context.user_data['quiz']['current_res'] = int(word[2])
-            
-#         when user has answered all the question    
+
+#         when user has answered all the question
         else:
             score= ((context.user_data['quiz']['correct_words']/40*100) + (context.user_data['quiz']['correct_nonwords']/20*100))/2
             context.bot.send_message(chat_id=msg.chat_id, text=f'You finished the test! Great job, you got a score of {score}!')
@@ -210,4 +210,3 @@ def main():
 if __name__ == '__main__':
 
     main()
-
