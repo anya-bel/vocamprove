@@ -16,8 +16,11 @@ from telegram.ext import (
     MessageHandler,
     Filters)
 
+
+import csv
 import json
 import string
+import random
 import logging, time
 
 
@@ -111,6 +114,9 @@ def common_message(update, context):
             score= ((context.user_data['quiz']['correct_words']/40*100) + (context.user_data['quiz']['correct_nonwords']/20*100))/2
             context.bot.send_message(chat_id=msg.chat_id, text=f'You finished the test! Great job, you got a score of {score}!')
 
+            # transforms the score into level
+            context.user_data['level'] = score_to_level(update, context, score)
+
 #           calls the preferred_genre function
             preferred_genre(update, context)
     else:
@@ -120,6 +126,18 @@ def common_message(update, context):
             search_text(update, context, msg)
         else:
             definition(update, context, msg)
+
+
+def score_to_level(update, context, score):
+    if score <= 50:
+        return "A2"
+    if score <= 59:
+        return "B1"
+    if score <= 80:
+        return "B2"
+    if score <= 90:
+        return "C1"
+    return "C2"
 
 
 def preferred_genre(update, context):
@@ -142,14 +160,44 @@ def preferred_genre(update, context):
 # looks for a text of the genre
 # needs to be completed
 def search_text(update, context, genre):
-    msg = "We are looking for a text of the genre " + genre + " for you."
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
+    msg1 = "We are looking for a text of the genre " + genre + " for you."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=msg1)
+    level = context.user_data['level']
+
+    rows_to_read = []
+    if genre == "academic":
+        rows_to_read = range(1, 30)
+    elif genre == "conversations":
+        rows_to_read = range(31, 60)
+    elif genre == "fiction":
+        rows_to_read = range(61, 85)
+    else:
+        rows_to_read = range(86, 182)
+
+    with open('../data/csv-files/labeled_texts.csv') as f:
+        reader = csv.reader(f)
+        interesting_rows = [row for i, row in enumerate(reader) if i in rows_to_read]
+        print(level, genre)
+
+    rows = []
+    for row in interesting_rows:
+        if row[2] == level:
+            rows.append(row[0])
+    if len(rows) == 0:
+        msg_error = "Oops, we don't have any matching text in our corpus yet..."
+        context.bot.send_message(chat_id=update.effective_chat.id, text=msg_error)
+        preferred_genre(update, context)
+
+    context.user_data['text'] = {}
+    context.user_data['text']['nb_text'] = random.choice(rows)
+    context.user_data['text']['nb_sentence'] = 0
     tell_sentence(update, context)
 
 
 # shows the sentence
 # needs to be completed with different sentences
 def tell_sentence(update, context):
+    print(context.user_data['text']['nb_text'])
     sentence = "Hello World! This is a test sentence, to see if you can read it."
     msg = sentence + ("\n\n/continue - I understood everything, let's go for the next sentence!\n"
       "/explanations - I didn\'t understand some words, can you help me?")
