@@ -35,7 +35,8 @@ def start(update, context):
     me = context.bot.get_me()
     msg = (f"Hello!\n I'm {me.first_name} and I came here to help you improve your vocabulary.\n"
            "First, I need to know your current level.\n Are you ready to take the test?\n"
-           "/ready - Let's start the test!\n /stop - We'll do it later\n\n")
+           "/ready - Let's start the test!\n /stop - We'll do it later\n"
+           "At any time in this conversation, press /stop to close the bot.\n\n")
     main_menu_keyboard = [[KeyboardButton('/ready')],
                           [KeyboardButton('/stop')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard,
@@ -177,7 +178,6 @@ def search_text(update, context, genre):
     with open('../data/csv-files/labeled_texts.csv') as f:
         reader = csv.reader(f)
         interesting_rows = [row for i, row in enumerate(reader) if i in rows_to_read]
-        print(level, genre)
 
     rows = []
     for row in interesting_rows:
@@ -187,35 +187,51 @@ def search_text(update, context, genre):
         msg_error = "Oops, we don't have any matching text in our corpus yet..."
         context.bot.send_message(chat_id=update.effective_chat.id, text=msg_error)
         preferred_genre(update, context)
+        return
 
     context.user_data['text'] = {}
-    context.user_data['text']['nb_text'] = random.choice(rows)
-    context.user_data['text']['nb_sentence'] = 0
+    context.user_data['text']['nb_text'] = int(random.choice(rows))
+    context.user_data['text']['nb_sentence'] = 1
     tell_sentence(update, context)
 
 
 # shows the sentence
 # needs to be completed with different sentences
 def tell_sentence(update, context):
-    print(context.user_data['text']['nb_text'])
-    sentence = "Hello World! This is a test sentence, to see if you can read it."
-    msg = sentence + ("\n\n/continue - I understood everything, let's go for the next sentence!\n"
-      "/explanations - I didn\'t understand some words, can you help me?")
-    main_menu_keyboard = [[KeyboardButton('/continue')],
-                          [KeyboardButton('/explanations')]]
-    reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+    sentence = pick_sentence(update, context)
+    if sentence == None:
+        msg = "Hooray! You have finished the text!"
+        context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
+    #sentence = "Hello World! This is a test sentence, to see if you can read it."
+    else:
+        context.user_data['text']['sentence'] = sentence
+        msg = sentence + ("\n\n/continue - I understood everything, let's go for the next sentence!\n"
+         "/explanations - I didn\'t understand some words, can you help me?")
+        main_menu_keyboard = [[KeyboardButton('/continue')],
+                            [KeyboardButton('/explanations')]]
+        reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
 
 
-# calls next sentence
-# not sure if necessary but may be useful when really implemented
-# needs to be completed with real sentences
-def next_sentence(update, context):
-    tell_sentence(update, context)
+def pick_sentence(update, context):
+    sentence = ""
+    with open('../data/csv-files/sentences.csv') as f:
+        reader = csv.reader(f)
+        next(reader)
+        for row in reader:
+            if int(row[2]) == context.user_data['text']['nb_text'] and int(row[0]) == context.user_data['text']['nb_sentence']:
+                sentence = row[1]
+                context.user_data['text']['nb_sentence'] += 1
+                break
+            if int(row[2]) > context.user_data['text']['nb_text']:
+                return None
+    return sentence
+
 
 
 # split the words of the sentence and create buttons to ask
-def split_words(update, context, sentence="Hello World! This is a test sentence, to see if you can read it."):
+def split_words(update, context):
+    sentence = context.user_data['text']['sentence']
     translation = str.maketrans('', '', string.punctuation)
     words = [w.translate(translation) for w in sentence.split()]
     main_menu_keyboard = []
@@ -230,7 +246,9 @@ def split_words(update, context, sentence="Hello World! This is a test sentence,
 # needs to be completed
 def definition(update, context, word):
     msg = "Definition of the word " + word
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
+    main_menu_keyboard = [[KeyboardButton('/continue')]]
+    reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
 
 
 def main():
@@ -243,7 +261,7 @@ def main():
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('ready', ready))
     dp.add_handler(CommandHandler('stop', stop))
-    dp.add_handler(CommandHandler('continue', next_sentence))
+    dp.add_handler(CommandHandler('continue', tell_sentence))
     dp.add_handler(CommandHandler('explanations', split_words))
 
 # message handlers
