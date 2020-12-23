@@ -161,7 +161,7 @@ def preferred_genre(update, context):
 # looks for a text of the genre
 # needs to be completed
 def search_text(update, context, genre):
-    msg1 = "We are looking for a text of the genre " + genre + " for you."
+    msg1 = "We found a text of the genre " + genre + ", for you!"
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg1)
     level = context.user_data['level']
 
