@@ -7,13 +7,6 @@ import pandas as pd
 
 startTime = time.time()
 
-
-# (list of POS tags in annotated corpus)
-# data_path = r'data/'
-# with open((data_path + 'words.csv'), "r", newline='', encoding='utf-8') as file:
-#    df=pd.read_csv(file)
-#    print(set(df.POS))
-
 # SET UP CSV FILES FOR STORING DATA
 def create_csv():
     # Define path to store CSV files.
