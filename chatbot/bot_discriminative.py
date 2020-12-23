@@ -178,6 +178,7 @@ def search_text(update, context, genre):
     with open('../data/csv-files/labeled_texts.csv') as f:
         reader = csv.reader(f)
         interesting_rows = [row for i, row in enumerate(reader) if i in rows_to_read]
+        print(level, genre)
 
     rows = []
     for row in interesting_rows:
@@ -198,11 +199,11 @@ def search_text(update, context, genre):
 # shows the sentence
 # needs to be completed with different sentences
 def tell_sentence(update, context):
+    print(context.user_data['text']['nb_text'], context.user_data['text']['nb_sentence'])
     sentence = pick_sentence(update, context)
     if sentence == None:
         msg = "Hooray! You have finished the text!"
         context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
-    #sentence = "Hello World! This is a test sentence, to see if you can read it."
     else:
         context.user_data['text']['sentence'] = sentence
         msg = sentence + ("\n\n/continue - I understood everything, let's go for the next sentence!\n"
@@ -224,6 +225,7 @@ def pick_sentence(update, context):
                 context.user_data['text']['nb_sentence'] += 1
                 break
             if int(row[2]) > context.user_data['text']['nb_text']:
+                print(type(row[2]), row[2])
                 return None
     return sentence
 
