@@ -6,6 +6,8 @@ from gtts import gTTS
 import numpy as np
 import pandas as pd
 import csv
+import spacy
+from spacy.kb import KnowledgeBase
 
 # (mock input)
 text_index = 5
@@ -16,7 +18,7 @@ word = 'project'
 POS_abb = 'v'
 
 
-# (mock interactive input)
+#(mock interactive input for debugging)
 # text_index = input('text index:\n')
 # sentence_index = input('sentence index:\n')
 # word_index = input('word index:\n')
@@ -61,7 +63,9 @@ def find_dependency():
 
 # POS
 def find_POS():
-    POS = ''
+    nlp = spacy.load("en_core_web_sm") 
+    doc = nlp(sentence)
+    POS = word, word.lemma_
     return(POS)
     
 # PRONUNCIATION
