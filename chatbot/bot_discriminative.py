@@ -247,7 +247,26 @@ def split_words(update, context):
 # provides definiton of the chosen word
 # needs to be completed
 def definition(update, context, word):
-    msg = "Definition of the word " + word
+    df=pd.read_csv('words.csv')
+    text_index=context.user_data['text']['nb_text']
+    sentence_index=int(context.user_data['text']['nb_sentence']) -1
+    csv_row = df.loc[(df['text-index'] == text_index) & (df['word'] == word+' ') & (df['sentence-index'] == sentence_index)]
+    POS_abb = csv_row['POS'].values[0]
+    columns=['Lemma', 'Definition', 'Example']
+    definition = pd.DataFrame(columns=columns)
+    for synset in wn.synsets(word)[0:-1]:
+        if synset.name()[-4] == POS_abb:
+            name = synset.name()[-4]
+            define = synset.definition()
+            example = synset.examples()
+            syn = pd.DataFrame(np.array([[name, define, example]], dtype=object), columns=columns)
+            definition = definition.append(syn)
+
+    tts = gTTS(word)
+    audio_name = str(word+'.mp3')
+    tts.save(audio_name)    
+    msg = f'This was the pronounciation. the info for the word {word} the def is {definition} '
+    context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
     main_menu_keyboard = [[KeyboardButton('/continue')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
