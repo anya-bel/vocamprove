@@ -291,6 +291,7 @@ def definition(update, context, msg, idex):
     word_index = idex
     text_index=context.user_data['text']['nb_text']
     sentence_index=int(context.user_data['text']['nb_sentence']) -1
+    word = msg
     csv_row = df.loc[(df['text-index'] == text_index) & (df['word-index'] == word_index) & (df['sentence-index'] == sentence_index)]
     POS_abb = csv_row['POS'].values[0]
     definition = find_definition(word, POS_abb)
