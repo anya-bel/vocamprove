@@ -16,7 +16,14 @@ from telegram.ext import (
     MessageHandler,
     Filters)
 
+from nltk.corpus import wordnet as wn
+import spacy
+from gtts import gTTS
+import numpy as np
+import pandas as pd
 
+import spacy
+from spacy.kb import KnowledgeBase
 import csv
 import json
 import string
