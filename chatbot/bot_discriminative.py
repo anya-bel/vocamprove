@@ -133,8 +133,7 @@ def common_message(update, context):
         if msg in genres:
             search_text(update, context, msg)
         else:
-            definition(update, context, msg)
-            return context.user_data['text']['words'].index(msg)
+            definition(update, context, msg, context.user_data['text']['words'].index(msg))
 
 
 def score_to_level(update, context, score):
@@ -287,7 +286,7 @@ def find_definition(word, POS):
 
 # provides definiton of the chosen word
 # needs to be completed
-def definition(update, context, word):
+def definition(update, context, word, index):
     df=pd.read_csv('words.csv')
     text_index=context.user_data['text']['nb_text']
     sentence_index=int(context.user_data['text']['nb_sentence']) -1
