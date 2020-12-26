@@ -134,6 +134,7 @@ def common_message(update, context):
             search_text(update, context, msg)
         else:
             definition(update, context, msg)
+            return context.user_data['text']['words'].index(msg)
 
 
 def score_to_level(update, context, score):
@@ -243,13 +244,14 @@ def split_words(update, context):
     sentence = context.user_data['text']['sentence']
     translation = str.maketrans('', '', string.punctuation)
     words = [w.translate(translation) for w in sentence.split()]
+    context.user_data['text']['words'] = words
     main_menu_keyboard = []
     msg = "What word did you not understand?"
     for w in words:
         main_menu_keyboard.append([KeyboardButton(w)])
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
-    return update.message.text
+
 
 def find_definition(word, POS):
     columns=['Word', 'Definition', 'Example']
