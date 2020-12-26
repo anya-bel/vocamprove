@@ -242,6 +242,7 @@ def split_words(update, context):
         main_menu_keyboard.append([KeyboardButton(w)])
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+    return update.message.text
 
 
 # provides definiton of the chosen word
@@ -264,7 +265,7 @@ def definition(update, context, word):
 
     tts = gTTS(word)
     audio_name = str(word+'.mp3')
-    tts.save(audio_name)    
+    tts.save(audio_name)
     msg = f'This was the pronounciation. the info for the word {word} the def is {definition} '
     context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
     main_menu_keyboard = [[KeyboardButton('/continue')]]
