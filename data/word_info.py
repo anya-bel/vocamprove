@@ -19,6 +19,57 @@ word_index = 5
 word = 'difficulty'
 POS_abb = 'n'
 
+dep = {
+    'acl': 'clausal modifier of noun (adjectival clause)',
+'advcl': 'adverbial clause modifier',
+'advmod': 'adverbial modifier',
+'amod': 'adjectival modifier',
+'appos': 'appositional modifier',
+'aux': 'auxiliary',
+'case': 'case marking',
+'cc': 'coordinating conjunction',
+'ccomp': 'clausal complement',
+'clf': 'classifier',
+'compound': 'compound',
+'conj': 'conjunct',
+'cop': 'copula',
+'csubj': 'clausal subject',
+'dep': 'unspecified dependency',
+'det': 'determiner',
+'discourse': 'discourse element',
+'dislocated': 'dislocated elements',
+'expl': 'expletive',
+'fixed': 'fixed multiword expression',
+'flat': 'flat multiword expression',
+'goeswith': 'goes with',
+'iobj': 'indirect object',
+'list': 'list',
+'mark': 'marker',
+'nmod': 'nominal modifier',
+'nsubj': 'nominal subject',
+'nummod': 'numeric modifier',
+'obj': 'object',
+'obl': 'oblique nominal',
+'orphan': 'orphan',
+'parataxis': 'parataxis',
+'punct': 'punctuation',
+'reparandum': 'overridden disfluency',
+'root': 'root',
+'vocative': 'vocative',
+'xcomp': 'open clausal complement',
+}
+
+pos_anno = {'VERB': 'verb',
+ 'PREP': 'preposition',
+ 'ART': 'article',
+ 'SUBST': 'substantive',
+ 'ADV': 'adverb',
+ 'ADJ': 'adjective',
+ 'CONJ': 'conjunction',
+ 'PRON': 'pronoun',
+ 'UNC': 'unclassified',
+ 'INTERJ': 'interjection'}
+
 
 #(mock interactive input for debugging)
 # text_index = input('text index:\n')
@@ -75,7 +126,7 @@ def find_dependency(idx, word, sentence):
             if idx-1 <= num <= idx+1:
                 dependency = token.dep_
                 break
-    return dependency
+    return dep[dependency]
 
 
 """
@@ -101,9 +152,9 @@ def word_info(definition, dependency, POS, audiopath):
 
 if __name__ == "__main__":
     idx, word, POS, sentence = locate(text_index, sentence_index, word_index)
-    print(sentence)
     definition = find_definition(word, POS)
     dependency = find_dependency(idx-1, word, sentence)
     #POS = find_POS(word)
     audiopath = find_pronunciation(word)
+    POS = pos_anno[POS]
     word_info(definition, dependency, POS, audiopath)
