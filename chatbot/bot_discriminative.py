@@ -286,22 +286,24 @@ def find_definition(word, POS):
 
 # provides definiton of the chosen word
 # needs to be completed
-def definition(update, context, word, index):
-    df=pd.read_csv('words.csv')
+def definition(update, context, msg, idex):
+    df=pd.read_csv('../data/csv-files/words.csv')
+    word_index = idex
     text_index=context.user_data['text']['nb_text']
     sentence_index=int(context.user_data['text']['nb_sentence']) -1
-    csv_row = df.loc[(df['text-index'] == text_index) & (df['word'] == word+' ') & (df['sentence-index'] == sentence_index)]
+    csv_row = df.loc[(df['text-index'] == text_index) & (df['word-index'] == word_index) & (df['sentence-index'] == sentence_index)]
     POS_abb = csv_row['POS'].values[0]
     definition = find_definition(word, POS_abb)
 
     tts = gTTS(word)
     audio_name = str(word+'.mp3')
     tts.save(audio_name)
-    msg = f'This was the pronounciation. the info for the word {word} the def is {definition} '
+    msg = f'This was the pronounciation. The definition of the word {word} is {definition} '
     context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
     main_menu_keyboard = [[KeyboardButton('/continue')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+
 
 
 def main():
