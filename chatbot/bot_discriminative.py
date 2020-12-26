@@ -244,6 +244,37 @@ def split_words(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
     return update.message.text
 
+def find_definition(word, POS):
+    columns=['Word', 'Definition', 'Example']
+    definition = pd.DataFrame(columns=columns)
+    pos_wn = {'ADJ': 'a',
+              'SUBST': 'n',
+              'VERB': 'v',
+              'ADV': 'r'}
+    pos = pos_wn.get(POS)
+    if pos:
+        for synset in wn.synsets(word)[0:-1]:
+            if synset.name()[-4] == pos:
+                # TO DO ► RegEx POS, definition and examples.
+
+                define = synset.definition()
+                example = synset.examples()
+
+                syn = pd.DataFrame(np.array([[word, define, example]], dtype=object), columns=columns)
+
+                definition = definition.append(syn)
+    else:
+        for synset in wn.synsets(word)[0:-1]:
+            define = synset.definition()
+            example = synset.examples()
+            syn = pd.DataFrame(np.array([[word, define, example]], dtype=object), columns=columns)
+            definition = definition.append(syn)
+
+    if definition.empty:
+        syn = pd.DataFrame(np.array([[word, '', []]], dtype=object), columns=columns)
+        definition = definition.append(syn)
+        return definition
+    return(definition)
 
 # provides definiton of the chosen word
 # needs to be completed
@@ -253,15 +284,7 @@ def definition(update, context, word):
     sentence_index=int(context.user_data['text']['nb_sentence']) -1
     csv_row = df.loc[(df['text-index'] == text_index) & (df['word'] == word+' ') & (df['sentence-index'] == sentence_index)]
     POS_abb = csv_row['POS'].values[0]
-    columns=['Lemma', 'Definition', 'Example']
-    definition = pd.DataFrame(columns=columns)
-    for synset in wn.synsets(word)[0:-1]:
-        if synset.name()[-4] == POS_abb:
-            name = synset.name()[-4]
-            define = synset.definition()
-            example = synset.examples()
-            syn = pd.DataFrame(np.array([[name, define, example]], dtype=object), columns=columns)
-            definition = definition.append(syn)
+    definition = find_definition(word, POS_abb)
 
     tts = gTTS(word)
     audio_name = str(word+'.mp3')
