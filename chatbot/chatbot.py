@@ -363,16 +363,16 @@ def definition(update, context, word, index):
         definition=''
         for index in range(len(definition_df)):
             if len(definition_df.iloc[index]['Definition'])>0:
-                definition+= f'definition number{index+1} :\n'
+                definition+= f'definition number {index+1} :\n'
                 definition+= definition_df.iloc[index]['Definition']
             else:
                 definition+= f'\n'
             if len(definition_df.iloc[index]['Example'])>0:
-                definition+= f'an example of this would be: \n'
+                definition+= f'\nan example of this would be: \n'
                 if type(definition_df.iloc[index]['Example'])==list:
-                    definition+= definition_df.iloc[index]['Example'][0]
+                    definition+= '__'+definition_df.iloc[index]['Example'][0]+'__'
                 else:
-                    definition+= definition_df.iloc[index]['Example']
+                    definition+= '__'+definition_df.iloc[index]['Example']+'__'
                 definition+= f'\n'
         depend = find_dependency(word_index,word,sentence)
         tts = gTTS(word)
