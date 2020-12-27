@@ -29,6 +29,8 @@ import string
 import random
 import os
 import logging, time
+import nltk
+nltk.download('wordnet')
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
