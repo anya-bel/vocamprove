@@ -22,16 +22,19 @@ Run the [Chatbot.py](https://github.com/anya-bel/vocamprove/blob/main/chatbot/ch
 #Chatbot
 
 #Command Handlers
-start, ready, stop # calls the specified functions
+start(update, context) # sends information about the bot
+ready(update, context) # asks for user confirmation to start the test
+stop(update, context) # terminates the conversation
 #Message Handler
 common_message # sends vocab test questions, processes the answers, and communicates the result 
+#Other Functions
 score_to_level(update, context, score) # maps the test result into CEFR level
 preferred_genre(update, context) # asks the preferred genre
 search_text(update, context, genre) #looks up the sentences for the user based on genre and level 
 pick_sentence(update, context) # picks the random sample of the text for the user
 tell_sentence(update, context) # sends the sentence
 split_words(update, context) # offers the words of the sentence in the form of seperate buttons to the user to choose the unknown one
-find_definition(word, POS) # looks up the definition from wordnet
+find_definition(word, pos) # looks up the definition from wordnet
 find_dependency(idx, word, sentence) # looks up the dependency from 'en_core_web_sm' model of Spacy package
 definition(update, context, word, index) # sends the definition, pronunciation and dependency
 
