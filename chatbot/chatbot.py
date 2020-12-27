@@ -91,7 +91,7 @@ pos_anno = {'VERB': 'verb',
 # introduces the bot and asks the user to participate in the test
 def start(update, context):
     me = context.bot.get_me()
-    msg = (f"Hello!\n I'm {me.first_name} and I came here to help you improve your vocabulary.\n"
+    msg = (f"Hello!\nI'm {me.first_name} and I came here to help you improve your vocabulary.\n"
            "First, I need to know your current level.\n Are you ready to take the test?\n"
            "/ready - Let's start the test!\n /stop - We'll do it later\n"
            "At any time in this conversation, press /stop to close the bot.\n\n")
@@ -160,7 +160,7 @@ def common_message(update, context):
                     data[str(context.user_data['quiz']['current_qid']+1)]["correct"]]
             question = ""
             if int(word[0]) - 3 > 0:
-                question += f'{str((int(word[0])-3))}.'
+                question += f'{str((int(word[0])-3))}. '
             question += f'Does the word "{word[1]}" exist?'
             response_keyboard = [[KeyboardButton('Yes')],
                                 [KeyboardButton('No')]]
@@ -386,23 +386,34 @@ def definition(update, context, word, index):
                 else:
                     definition+= '__'+definition_df.iloc[index]['Example']+'__'
                 definition+= f'\n'
-        depend = find_dependency(word_index,word,sentence)
+    except:
+        definition = "Definition not found. \n"
+    msg = ""
+    try:
         tts = gTTS(word)
         audio_name = str(word+'.mp3')
         tts.save(audio_name)
-        msg = f'This was the pronounciation. \n {definition} \n The dependency of this word is: {depend}'
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
         os.remove(audio_name)
-        main_menu_keyboard = [[KeyboardButton('/continue')],
-                            [KeyboardButton('/explanations')]]
-        reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
-        context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+        msg += "This was the pronounciation. \n"
     except:
-        msgError = "No definition found."
-        main_menu_keyboard = [[KeyboardButton('/continue')],
-                            [KeyboardButton('/explanations')]]
-        reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
-        context.bot.send_message(chat_id=update.effective_chat.id, text=msgError, reply_markup=reply_kb_markup)
+        msg+= "Pronunciation not found. \n"
+
+    depend = find_dependency(word_index,word,sentence)
+    msg += f'{definition}The dependency of this word is: {depend}'
+
+    try:
+        photo_name = str(word+'.svg')
+        context.bot.send_picture(chat_id=update.effective_chat.id, photo=open(photo_name, 'rb'))
+        os.remove(photo_name)
+    except:
+        pass
+
+    main_menu_keyboard = [[KeyboardButton('/continue')],
+                        [KeyboardButton('/explanations')]]
+    reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+
 
 
 def main():
