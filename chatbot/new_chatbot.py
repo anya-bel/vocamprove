@@ -335,50 +335,62 @@ def find_definition(word, POS):
     return(definition)
 
 def find_dependency(idx, word, sentence):
-    nlp = en_core_web_sm.load()
-    doc = nlp(sentence)
-    for num, token in enumerate(doc):
-        if token.text == word:
-            if idx-1 <= num <= idx+1:
-                dependency = token.dep_
-                break
-    return dep[dependency]
+    try:
+        nlp = en_core_web_sm.load()
+        doc = nlp(sentence)
+        dependency = ""
+        for num, token in enumerate(doc):
+            if token.text == word:
+                if idx-1 <= num <= idx+1:
+                    dependency = token.dep_
+                    break
+        return dep[dependency]
+    except:
+        return "Not found"
 
 # provides definiton of the chosen word
 # needs to be completed
 def definition(update, context, word, index):
-    df = pd.read_csv('../data/csv-files/words.csv')
-    word_index = int(idex)+1
-    text_index = context.user_data['text']['nb_text']
-    sentence_index = int(context.user_data['text']['nb_sentence']) -1
-    sentence = context.user_data['text']['sentence']
-    csv_row = df.loc[(df['text-index'] == text_index) & (df['word'] == word+' ') & (df['sentence-index'] == sentence_index)]
-    POS_abb = csv_row['POS'].values[0]
-    definition_df = find_definition(word, POS_abb)
-    definition=''
-    for index in range(len(definition_df)):
-        if len(definition_df.iloc[index]['Definition'])>0:  
-            definition+= f'definition number{index+1} :\n'
-            definition+= definition_df.iloc[index]['Definition']
-        else:
-            definition+= f'\n'
-        if len(definition_df.iloc[index]['Example'])>0:
-            definition+= f'an example of this would be: \n'
-            if type(definition_df.iloc[index]['Example'])==list:
-                definition+= definition_df.iloc[index]['Example'][0]
+    try:
+        df = pd.read_csv('../data/csv-files/words.csv')
+        word_index = int(index)+1
+        text_index = context.user_data['text']['nb_text']
+        sentence_index = int(context.user_data['text']['nb_sentence']) -1
+        sentence = context.user_data['text']['sentence']
+        csv_row = df.loc[(df['text-index'] == text_index) & (df['word'] == word+' ') & (df['sentence-index'] == sentence_index)]
+        POS_abb = csv_row['POS'].values[0]
+        definition_df = find_definition(word, POS_abb)
+        definition=''
+        for index in range(len(definition_df)):
+            if len(definition_df.iloc[index]['Definition'])>0:
+                definition+= f'definition number{index+1} :\n'
+                definition+= definition_df.iloc[index]['Definition']
             else:
-                definition+= definition_df.iloc[index]['Example']
-            definition+= f'\n'
-    depend = find_dependency(word_index,word,sentence)
-    tts = gTTS(word)
-    audio_name = str(word+'.mp3')
-    tts.save(audio_name)
-    msg = f'This was the pronounciation. \n {definition} \n The dependency of this word is: {depend}'
-    context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
-    main_menu_keyboard = [[KeyboardButton('/continue')]]
-    reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
-    
+                definition+= f'\n'
+            if len(definition_df.iloc[index]['Example'])>0:
+                definition+= f'an example of this would be: \n'
+                if type(definition_df.iloc[index]['Example'])==list:
+                    definition+= definition_df.iloc[index]['Example'][0]
+                else:
+                    definition+= definition_df.iloc[index]['Example']
+                definition+= f'\n'
+        depend = find_dependency(word_index,word,sentence)
+        tts = gTTS(word)
+        audio_name = str(word+'.mp3')
+        tts.save(audio_name)
+        msg = f'This was the pronounciation. \n {definition} \n The dependency of this word is: {depend}'
+        context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
+        main_menu_keyboard = [[KeyboardButton('/continue')],
+                            [KeyboardButton('/explanations')]]
+        reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+    except:
+        msgError = "No definition found."
+        main_menu_keyboard = [[KeyboardButton('/continue')],
+                            [KeyboardButton('/explanations')]]
+        reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
+        context.bot.send_message(chat_id=update.effective_chat.id, text=msgError, reply_markup=reply_kb_markup)
+
 
 def main():
 # creates the updater object to provide a frontend to bot. it receives the updates from Telegram
@@ -407,4 +419,3 @@ def main():
 if __name__ == '__main__':
 
     main()
-
