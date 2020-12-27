@@ -1,2 +1,1 @@
-cd chatbot
-python3 chatbot.py
+web: cd chatbot && python3 chatbot.py
