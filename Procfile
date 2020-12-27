@@ -1,1 +1,1 @@
-web: cd chatbot && python3 chatbot.py
+worker: cd chatbot && python3 chatbot.py
