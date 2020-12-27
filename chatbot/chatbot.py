@@ -345,6 +345,10 @@ def find_dependency(idx, word, sentence):
     try:
         nlp = en_core_web_sm.load()
         doc = nlp(sentence)
+        svg = spacy.displacy.render(doc, style="dep", jupyter=False)
+        file_name = word+'.svg'
+        with open(file_name, 'w') as image:
+            image.write(svg)
         dependency = ""
         for num, token in enumerate(doc):
             if token.text == word:
