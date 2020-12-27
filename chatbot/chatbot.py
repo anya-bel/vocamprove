@@ -5,6 +5,7 @@
 
 
 from telegram import (
+    ParseMode,
     Poll,
     KeyboardButton,
     ReplyKeyboardMarkup)
@@ -410,7 +411,7 @@ def definition(update, context, word, index):
     main_menu_keyboard = [[KeyboardButton('/continue')],
                         [KeyboardButton('/explanations')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup, parse_mode=ParseMode.MARKDOWN)
     try:
         photo_name = str(word+'.png')
         context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo_name, 'rb'))
