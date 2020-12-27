@@ -25,6 +25,7 @@ import csv
 import json
 import string
 import random
+import os
 import logging, time
 
 
@@ -157,9 +158,12 @@ def common_message(update, context):
             word = [str(context.user_data['quiz']['current_qid']+1),
                     data[str(context.user_data['quiz']['current_qid']+1)]["word"],
                     data[str(context.user_data['quiz']['current_qid']+1)]["correct"]]
-            question = f'{str(max((int(word[0])-3),0))}. Does the word "{word[1]}" exist?'
-            response_keyboard = [[KeyboardButton('No')],
-                              [KeyboardButton('Yes')]]
+            question = ""
+            if int(word[0]) - 3 > 0:
+                question += f'{str((int(word[0])-3))}.'
+            question += f'Does the word "{word[1]}" exist?'
+            response_keyboard = [[KeyboardButton('Yes')],
+                                [KeyboardButton('No')]]
             reply_kb = ReplyKeyboardMarkup(response_keyboard,
                                                        resize_keyboard=True,
                                                        one_time_keyboard=True)
@@ -169,8 +173,13 @@ def common_message(update, context):
 
 #         when user has answered all the question
         else:
-            score= ((context.user_data['quiz']['correct_words']/40*100) + (context.user_data['quiz']['correct_nonwords']/20*100))/2
-            context.bot.send_message(chat_id=msg.chat_id, text=f'You finished the test! Great job, you got a score of {score}!')
+            score = ((context.user_data['quiz']['correct_words']/40*100) + (context.user_data['quiz']['correct_nonwords']/20*100))/2
+            if msg.text == "test":
+                msgError = "This test is meant to be taken only once by you, we will offer you some text based on your previous results."
+                msgError += f'For a reminder, you got a score of {score}.'
+                context.bot.send_message(chat_id=msg.chat_id, text=msgError)
+            else:
+                context.bot.send_message(chat_id=msg.chat_id, text=f'You finished the test! Great job, you got a score of {score}!')
 
             # transforms the score into level
             context.user_data['level'] = score_to_level(update, context, score)
@@ -218,8 +227,6 @@ def preferred_genre(update, context):
 # looks for a text of the genre
 # needs to be completed
 def search_text(update, context, genre):
-    msg1 = "We found a text of the genre " + genre + ", for you!"
-    context.bot.send_message(chat_id=update.effective_chat.id, text=msg1)
     level = context.user_data['level']
 
     rows_to_read = []
@@ -259,7 +266,7 @@ def tell_sentence(update, context):
     print(context.user_data['text']['nb_text'], context.user_data['text']['nb_sentence'])
     sentence = pick_sentence(update, context)
     if sentence == None:
-        msg = "Hooray! You have finished the text!"
+        msg = "Hooray! You finished the text!"
         context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
     else:
         context.user_data['text']['sentence'] = sentence
@@ -290,7 +297,7 @@ def pick_sentence(update, context):
 
 # split the words of the sentence and create buttons to ask
 def split_words(update, context):
-    sentence = context.user_data['text']['sentence']
+    sentence = context.user_data['text']['sentence'].lower()
     translation = str.maketrans('', '', string.punctuation)
     words = [w.translate(translation) for w in sentence.split()]
     context.user_data['text']['words'] = words
@@ -363,12 +370,13 @@ def definition(update, context, word, index):
         definition=''
         for index in range(len(definition_df)):
             if len(definition_df.iloc[index]['Definition'])>0:
-                definition+= f'definition number {index+1} :\n'
+                definition+= f'definition number  {index+1}:\n'
                 definition+= definition_df.iloc[index]['Definition']
+                definition+="\n\n"
             else:
                 definition+= f'\n'
             if len(definition_df.iloc[index]['Example'])>0:
-                definition+= f'\nan example of this would be: \n'
+                definition+= f'\nAn example of this would be: \n'
                 if type(definition_df.iloc[index]['Example'])==list:
                     definition+= '__'+definition_df.iloc[index]['Example'][0]+'__'
                 else:
@@ -379,6 +387,7 @@ def definition(update, context, word, index):
         audio_name = str(word+'.mp3')
         tts.save(audio_name)
         msg = f'This was the pronounciation. \n {definition} \n The dependency of this word is: {depend}'
+        os.remove(audio_name)
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
         main_menu_keyboard = [[KeyboardButton('/continue')],
                             [KeyboardButton('/explanations')]]
