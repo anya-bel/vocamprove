@@ -387,8 +387,8 @@ def definition(update, context, word, index):
         audio_name = str(word+'.mp3')
         tts.save(audio_name)
         msg = f'This was the pronounciation. \n {definition} \n The dependency of this word is: {depend}'
-        os.remove(audio_name)
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
+        os.remove(audio_name)
         main_menu_keyboard = [[KeyboardButton('/continue')],
                             [KeyboardButton('/explanations')]]
         reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
