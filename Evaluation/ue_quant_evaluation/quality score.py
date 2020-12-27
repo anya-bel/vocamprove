@@ -1,4 +1,4 @@
-def human_evaluation(df):   
+def human_evaluation(results):   
     n_tot=len(set(df['dimension']))
     D_sum = 0
     c=0
@@ -19,9 +19,9 @@ def human_evaluation(df):
             Dim_j += p*factor_n
         D_sum += (1-(Dim_j/100))**2
     D = sqrt(D_sum)
+    # The real system quality is then computed
     Q = (1-(D/sqrt(n_tot)))*100
     return(Q)
-
 
 path = "/content/drive/MyDrive/Uni_Projects/Vocamprove/eva.csv"
 df = pd.read_csv(path)
@@ -43,7 +43,6 @@ df['f_weight']=f_weight
 df['dimension']=dimension
 
 header = list(df)
-
 
 if __name__ == "__main__":
 	human_evaluation(df)
