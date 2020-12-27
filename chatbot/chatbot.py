@@ -15,9 +15,11 @@ from telegram.ext import (
     PollHandler,
     MessageHandler,
     Filters)
-from nltk.corpus import wordnet as wn
-import spacy
 from gtts import gTTS
+from nltk.corpus import wordnet as wn
+from reportlab.graphics import renderPM
+from svglib.svglib import svg2rlg
+import spacy
 import numpy as np
 import pandas as pd
 import en_core_web_sm
@@ -349,6 +351,9 @@ def find_dependency(idx, word, sentence):
         file_name = word+'.svg'
         with open(file_name, 'w') as image:
             image.write(svg)
+        drawing = svg2rlg(word+'.svg')
+        renderPM.drawToFile(drawing, word+'.png', fmt="PNG")
+        os.remove(word+'.svg')
         dependency = ""
         for num, token in enumerate(doc):
             if token.text == word:
