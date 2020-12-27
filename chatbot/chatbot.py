@@ -131,8 +131,6 @@ def stop(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Ok, no problem. See you next time then!")
 
 
-
-
 def common_message(update, context):
     msg = update.message
     user = msg.from_user
@@ -379,19 +377,20 @@ def definition(update, context, word, index):
         definition=''
         for index in range(len(definition_df)):
             if len(definition_df.iloc[index]['Definition'])>0:
-                definition+= f'definition number  {index+1}:\n'
+                definition+= f'\ndefinition number  {index+1}:\n'
                 definition+= definition_df.iloc[index]['Definition']
+                definition+= "\n"
             else:
                 definition+= f'\n'
             if len(definition_df.iloc[index]['Example'])>0:
-                definition+= f'\nAn example of this would be: \n'
+                definition+= f'An example of this would be: \n'
                 if type(definition_df.iloc[index]['Example'])==list:
                     definition+= '__'+definition_df.iloc[index]['Example'][0]+'__'
                 else:
                     definition+= '__'+definition_df.iloc[index]['Example']+'__'
-                definition+= f'\n\n'
+                definition+= f'\n'
     except:
-        definition = "Definition not found. \n\n"
+        definition = "Definition not found."
     msg = ""
     try:
         tts = gTTS(word)
@@ -399,9 +398,9 @@ def definition(update, context, word, index):
         tts.save(audio_name)
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
         os.remove(audio_name)
-        msg += "This was the pronounciation. \n"
+        msg += "This was the pronounciation.\n"
     except:
-        msg+= "Pronunciation not found. \n"
+        msg+= "Pronunciation not found.\n"
 
     depend = find_dependency(word_index,word,sentence)
     msg += f'{definition}\nThe dependency of this word is: {depend}'
