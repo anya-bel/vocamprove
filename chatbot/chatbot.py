@@ -381,7 +381,6 @@ def definition(update, context, word, index):
             if len(definition_df.iloc[index]['Definition'])>0:
                 definition+= f'definition number  {index+1}:\n'
                 definition+= definition_df.iloc[index]['Definition']
-                definition+="\n\n"
             else:
                 definition+= f'\n'
             if len(definition_df.iloc[index]['Example'])>0:
@@ -390,9 +389,9 @@ def definition(update, context, word, index):
                     definition+= '__'+definition_df.iloc[index]['Example'][0]+'__'
                 else:
                     definition+= '__'+definition_df.iloc[index]['Example']+'__'
-                definition+= f'\n'
+                definition+= f'\n\n'
     except:
-        definition = "Definition not found. \n"
+        definition = "Definition not found. \n\n"
     msg = ""
     try:
         tts = gTTS(word)
@@ -405,19 +404,18 @@ def definition(update, context, word, index):
         msg+= "Pronunciation not found. \n"
 
     depend = find_dependency(word_index,word,sentence)
-    msg += f'{definition}The dependency of this word is: {depend}'
-
-    try:
-        photo_name = str(word+'.svg')
-        context.bot.send_picture(chat_id=update.effective_chat.id, photo=open(photo_name, 'rb'))
-        os.remove(photo_name)
-    except:
-        pass
+    msg += f'{definition}\nThe dependency of this word is: {depend}'
 
     main_menu_keyboard = [[KeyboardButton('/continue')],
                         [KeyboardButton('/explanations')]]
     reply_kb_markup = ReplyKeyboardMarkup(main_menu_keyboard , resize_keyboard=True , one_time_keyboard=True)
     context.bot.send_message(chat_id=update.effective_chat.id, text=msg, reply_markup=reply_kb_markup)
+    try:
+        photo_name = str(word+'.png')
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(photo_name, 'rb'))
+        os.remove(photo_name)
+    except:
+        pass
 
 
 
