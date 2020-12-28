@@ -1,4 +1,8 @@
-def human_evaluation(results):   
+from math import sqrt
+from numpy import mean, isnan
+import pandas as pd
+
+def human_evaluation(results):
     n_tot=len(set(df['dimension']))
     D_sum = 0
     c=0
@@ -20,14 +24,21 @@ def human_evaluation(results):
         D_sum += (1-(Dim_j/100))**2
     D = sqrt(D_sum)
     # The real system quality is then computed
-    Q = (1-(D/sqrt(n_tot)))*100
-    return(Q)
+    q = (1-(D/sqrt(n_tot)))*100
+    return(q)
 
 path = "/content/drive/MyDrive/Uni_Projects/Vocamprove/eva.csv"
+
 df = pd.read_csv(path)
 df = df.T
 df = df.reset_index(drop=True)
 df = df.drop(0)
+col_1 = list((df[1]))
+print(col_1)
+col_int= [int(s) for s in col_1 if ((isinstance(s, int) or isinstance(s, float))and str(s) != 'nan')]
+print(col_int)
+df = df.loc[col_int]
+df = df.reset_index(drop=False)
 df = df.astype(str).astype(int)
 
 q_weight = [0.5,0.5, 0.2,0.2,0.2,0.2,0.2, 0.25,0.25,0.25,0.25, 1, 0.5,0.5, 1,1,1,1, 0.25,0.25,0.25,0.25, 1]
@@ -35,13 +46,11 @@ factor = [1,1,2,2,2,2,2,3,3,3,3,4,5,5,6,7,8,9,10,10,10,10,11]
 f_weight = [1 for i in range(len(q_weight))]
 dimension = [1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3]
 
-
 df['avg']= df.mean(numeric_only=True, axis=1)*20
 df['q_weight']=q_weight
 df['factor']=factor
 df['f_weight']=f_weight
 df['dimension']=dimension
-
 header = list(df)
 
 if __name__ == "__main__":
