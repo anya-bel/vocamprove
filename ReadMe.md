@@ -8,6 +8,7 @@ The Pronunciation, definition of the word's meaning, other examples of the word'
 
 
 ## Installation
+For prequisites, please check [requirements](https://github.com/anya-bel/vocamprove/blob/main/requirements.txt)
 
 Run the [Chatbot.py](https://github.com/anya-bel/vocamprove/blob/main/chatbot/chatbot.py) script to make a vocabulary test based on the words mentioned in [Questions](https://github.com/anya-bel/vocamprove/blob/main/chatbot/Questions.json).
 
