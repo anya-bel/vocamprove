@@ -337,7 +337,14 @@ def find_definition(word, POS):
             example = synset.examples()
             syn = pd.DataFrame(np.array([[word, define, example]]), columns=columns)
             definition = definition.append(syn)
-
+    
+    if len(definition)==0:
+        for synset in wn.synsets(word)[0:-1]:
+            define = synset.definition()
+            example = synset.examples()
+            syn = pd.DataFrame(np.array([[word, define, example]]), columns=columns)
+            definition = definition.append(syn)
+    
     if definition.empty:
         syn = pd.DataFrame(np.array([[word, '', []]]), columns=columns)
         definition = definition.append(syn)
