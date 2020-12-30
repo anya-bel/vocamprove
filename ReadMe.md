@@ -28,17 +28,17 @@ The chatbot was deployed on Heroku and is therefore available without the need t
 
 📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
 
-  [...]
+&nbsp;  [...]
 
 📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
 
-  📄 words.csv
+&nbsp;  📄 words.csv
   
-  📄 sentences.csv
+&nbsp;  📄 sentences.csv
   
-  📄 texts.csv
+&nbsp;  📄 texts.csv
   
-  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
+&nbsp;  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
 
 📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
 
@@ -48,13 +48,13 @@ The chatbot was deployed on Heroku and is therefore available without the need t
 
 📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
   
-  [...]
+&nbsp;  [...]
 
 📁 ue_evaluation
   
-  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
+&nbsp;  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
   
-  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
+&nbsp;  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
 
 ### Functions
 
