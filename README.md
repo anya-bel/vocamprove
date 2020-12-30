@@ -5,6 +5,10 @@ Vocamprove is a language learning tool for English, focused on vocabulary buildi
 #### User interaction pipeline:
 After the Telegram chatbot has administered the vocabulary size test to the user, test results are mapped to CEFR (Common European Framework of Reference for Languages) and then used to suggest texts based on the preferred genre from the corpus (currently the British National Corpus, Baby Edition). The lexical CEFR level of the excerpts were assessed after evaluating four lexical complexity estimation methods. Suitable text samples based on user's preference and level are offered to the user, one sentence at a time. At each sentence, the user can decide to continue reading, or, if there are any words that the user does not know, the bot will provide more details. Pronunciation, definition of the word's meaning, word usage examples, and a dependency graph of the sentence are sent to the user, when an unknown word is selected.
 
+#### User experience Evaluation:
+The user experience evaluation consisted in a survey, which full results are available in the evaluation folder. Both quantitative and qualitative data is available.
+
+
 ## Installation
 
 1. cd to the directory where requirements.txt is located;
