@@ -17,7 +17,7 @@ The user experience evaluation consisted in a survey, which full results are ava
 
 
 ## Usage
-The chatbot was deployed on Heroku and is therefore available without the need to run any of the code in this repository.
+N.B. The chatbot was deployed on Heroku and is therefore available without the need to run any of the code in this repository.
 
 ### Folder structure
 #### 📁 chatbot
