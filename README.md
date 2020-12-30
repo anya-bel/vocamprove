@@ -1,11 +1,6 @@
 # Vocamprove
 
-Vocamprove is a language learning tool for English, focused on vocabulary building. It is presented to the user as a Telegram chatbot carrying out the main tasks of: (1) assessing the user’s English vocabulary size, (2)recording their reading genre preferences, (3) providing them with suitable reading material, based on such preferences and vocabulary size, and (4) provide the user with information on unknown words in order to help them enrich their English vocabulary. 
-Telegram chatbot communicates the vocabulary size test questions. The user's test result is then mapped to CEFR(Common European Framework of Reference for Languages) level and then used to suggest text based on the preferred genre from the corpus (British National Corpus).
-Text sample's level was assessed using different lexical complexity estimation methods.
-Suitable text sample based on user's preference and level is then offered to the user, one sentence at a time. user would be able to continue to read, or ask the bot to explain some unknown word. user would be asked to chose the unknown word and will receive the following information: 
-The Pronunciation, definition of the word's meaning, other examples of the word's usage, and the dependency graph of the sentence.
-
+Vocamprove is a language learning tool for English, focused on vocabulary building. It is presented to the user as a Telegram chatbot carrying out the main tasks of: (1) assessing the user’s English vocabulary size, (2) recording their reading genre preferences, (3) providing them with suitable reading material, based on such preferences and vocabulary size, and (4) provide the user with information on unknown words in order to help them enrich their English vocabulary. 
 
 ## Installation
 
