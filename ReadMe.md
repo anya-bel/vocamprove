@@ -11,7 +11,7 @@ The Pronunciation, definition of the word's meaning, other examples of the word'
 
 1. cd to the directory where requirements.txt is located;
 2. activate your virtualenv;
-3 run: `pip install -r requirements.txt` in your shell.
+3. run: `pip install -r requirements.txt` in your shell.
 
 
 ## Usage
@@ -20,41 +20,41 @@ The chatbot was deployed on Heroku and is therefore available without the need t
 ### Folder structure
 #### 📁 chatbot
 
-📄 chatbot.py - activates the chatbot
+&nbsp;&nbsp;📄 chatbot.py - activates the chatbot
 
-📄 Questions.json - from here, the chatbot retrieves the questions to be proposed to the user during the vocabulary test.
+&nbsp;&nbsp;📄 Questions.json - from here, the chatbot retrieves the questions to be proposed to the user during the vocabulary test.
 
 #### 📁 data
 
-📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
+&nbsp;&nbsp;📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
 
-&nbsp;  [...]
+&nbsp;&nbsp;&nbsp;&nbsp;  [...]
 
-📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
+&nbsp;&nbsp;📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
 
-&nbsp;  📄 words.csv
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 words.csv
   
-&nbsp;  📄 sentences.csv
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 sentences.csv
   
-&nbsp;  📄 texts.csv
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 texts.csv
   
-&nbsp;  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
 
-📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
+&nbsp;&nbsp;📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
 
-📄 word_info.py - contains the functions retrieving information from words
+&nbsp;&nbsp;📄 word_info.py - contains the functions retrieving information from words
 
 #### 📁 evaluation
 
-📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
+&nbsp;&nbsp;📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
   
-&nbsp;  [...]
+&nbsp;&nbsp;&nbsp;&nbsp;  [...]
 
-📁 ue_evaluation
+&nbsp;&nbsp;📁 ue_evaluation
   
-&nbsp;  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
   
-&nbsp;  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
+&nbsp;&nbsp;&nbsp;&nbsp;  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
 
 ### Functions
 
