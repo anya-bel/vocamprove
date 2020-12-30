@@ -20,41 +20,41 @@ The chatbot was deployed on Heroku and is therefore available without the need t
 ### Folder structure
 #### 📁 chatbot
 
-&nbsp;&nbsp;📄 chatbot.py - activates the chatbot
+&nbsp;&nbsp;&nbsp;&nbsp;📄 chatbot.py - activates the chatbot
 
-&nbsp;&nbsp;📄 Questions.json - from here, the chatbot retrieves the questions to be proposed to the user during the vocabulary test.
+&nbsp;&nbsp;&nbsp;&nbsp;📄 Questions.json - from here, the chatbot retrieves the questions to be proposed to the user during the vocabulary test.
 
 #### 📁 data
 
-&nbsp;&nbsp;📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
+&nbsp;&nbsp;&nbsp;&nbsp;📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
 
-&nbsp;&nbsp;&nbsp;&nbsp;  [...]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [...]
 
-&nbsp;&nbsp;📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
+&nbsp;&nbsp;&nbsp;&nbsp;📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
 
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 words.csv
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 words.csv
   
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 sentences.csv
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 sentences.csv
   
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 texts.csv
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 texts.csv
   
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
 
-&nbsp;&nbsp;📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
 
-&nbsp;&nbsp;📄 word_info.py - contains the functions retrieving information from words
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 word_info.py - contains the functions retrieving information from words
 
 #### 📁 evaluation
 
-&nbsp;&nbsp;📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
+&nbsp;&nbsp;&nbsp;&nbsp;📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
   
-&nbsp;&nbsp;&nbsp;&nbsp;  [...]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [...]
 
-&nbsp;&nbsp;📁 ue_evaluation
+&nbsp;&nbsp;&nbsp;&nbsp;📁 ue_evaluation
   
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
   
-&nbsp;&nbsp;&nbsp;&nbsp;  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
 
 ### Functions
 
