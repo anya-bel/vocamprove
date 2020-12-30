@@ -2,25 +2,48 @@
 
 Vocamprove is a language learning tool for English, focused on vocabulary building. It is presented to the user as a Telegram chatbot carrying out the main tasks of: (1) assessing the user’s English vocabulary size, (2)recording their reading genre preferences, (3) providing them with suitable reading material, based on such preferences and vocabulary size, and (4) provide the user with information on unknown words in order to help them enrich their English vocabulary. 
 Telegram chatbot communicates the vocabulary size test questions. The user's test result is then mapped to CEFR(Common European Framework of Reference for Languages) level and then used to suggest text based on the preferred genre from the corpus (British National Corpus).
-Text sample's level is assessed using a number of lexical complexity estimation methods(???)
+Text sample's level was assessed using different lexical complexity estimation methods.
 Suitable text sample based on user's preference and level is then offered to the user, one sentence at a time. user would be able to continue to read, or ask the bot to explain some unknown word. user would be asked to chose the unknown word and will receive the following information: 
 The Pronunciation, definition of the word's meaning, other examples of the word's usage, and the dependency graph of the sentence.
 
 
 ## Installation
-For prequisites, please check [requirements](https://github.com/anya-bel/vocamprove/blob/main/requirements.txt)
 
-Run the [Chatbot.py](https://github.com/anya-bel/vocamprove/blob/main/chatbot/chatbot.py) script to make a vocabulary test based on the words mentioned in [Questions](https://github.com/anya-bel/vocamprove/blob/main/chatbot/Questions.json).
+1. cd to the directory where requirements.txt is located;
+2. activate your virtualenv;
+3 run: `<pip install -r requirements.txt>` in your shell.
 
-```bash
-#
-
-```
 
 ## Usage
+The chatbot was deployed on Heroku and is therefore available without the need to run any of the code in this repository.
+
+### Folder structure
+#### 📁 chatbot
+📄 chatbot.py - activates the chatbot
+📄 Questions.json - from here, the chatbot retrieves the questions to be proposed to the user during the vocabulary test.
+
+#### 📁 data
+📁 Texts - contains all the original corpus extracts that are presented to the user sentence by sentence
+  [...]
+📁 csv-files - contains all the data in the corpus above, but rearranged in three files with metadata (indexes, POS tags, ...)
+  📄 words.csv
+  📄 sentences.csv
+  📄 texts.csv
+  📄 labeled_texts.csv - texts are labeled according to the current best performing algorithm
+📄 dataset_setup.py - the script creating 3 CSV files containing all the data from the corpus, plus the metadata 
+📄 word_info.py - contains the functions retrieving information from words
+
+#### 📁 evaluation
+📁 algorithm_quant_evaluation - contains all the algorithms that were used for the lexical complexity evaluation
+  [...]
+📁 ue_evaluation
+  📄 survey_results.csv - results (quantitative and qualitative) from the user experience survey
+  📄 quality_score.py - algorithm processing the quantitative results to calculate the overall system score 
+
+### Functions
 
 ```python
-#Chatbot
+#chatbot.py
 
 #Command Handlers
 start(update, context) # sends information about the bot
@@ -38,8 +61,6 @@ split_words(update, context) # offers the words of the sentence in the form of s
 find_definition(word, pos) # looks up the definition from wordnet
 find_dependency(idx, word, sentence) # looks up the dependency from 'en_core_web_sm' model of Spacy package
 definition(update, context, word, index) # sends the definition, pronunciation and dependency
-
-
 ```
 
 ## Contributing
