@@ -1,16 +1,18 @@
 # Vocamprove
 
-![Vocamprove Logo](https://github.com/anya-bel/vocamprove/blob/main/img/logo_vocamprove.png =250x)
+<p float="center">
+  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/logo_vocamprove.png" width="350" />
+</p>
 
 Vocamprove is a language learning tool for English, focused on vocabulary building. It is presented to the user as a Telegram chatbot carrying out the main tasks of: (1) assessing the user’s English vocabulary size, (2) recording their reading genre preferences, (3) providing them with suitable reading material, based on such preferences and vocabulary size, and (4) provide the user with information on unknown words in order to help them enrich their English vocabulary. 
 
 #### User interaction pipeline:
 After the Telegram chatbot has administered the vocabulary size test to the user, test results are mapped to CEFR (Common European Framework of Reference for Languages) and then used to suggest texts based on the preferred genre from the corpus (currently the British National Corpus, Baby Edition). The lexical CEFR level of the excerpts were assessed after evaluating four lexical complexity estimation methods. Suitable text samples based on user's preference and level are offered to the user, one sentence at a time. At each sentence, the user can decide to continue reading, or, if there are any words that the user does not know, the bot will provide more details. Pronunciation, definition of the word's meaning, word usage examples, and a dependency graph of the sentence are sent to the user, when an unknown word is selected.
 
-<p float="left">
-  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/def.jpg" width="100" />
-  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/words.jpg" width="100" /> 
-  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/def.jpg" width="100" />
+<p float="center">
+  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/def.jpg" width="200" />
+  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/words.jpg" width="200" /> 
+  <img src="https://github.com/anya-bel/vocamprove/blob/main/img/def.jpg" width="200" />
 </p>
 
 #### User experience Evaluation:
