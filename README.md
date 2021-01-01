@@ -98,6 +98,6 @@ Please make sure to update tests as appropriate.
 
 [4] Kristin Lemhöfer and Mirjam Broersma. “Introducing LexTALE: A quick and valid Lexical Test for Advanced Learners of English”. In: Behavior research methods 44 (June 2012), pp. 325–343. doi: https://doi.org/10.3758/s13428-011-0146-0.
 
-[5] XIAOFEI LU. “The Relationship of Lexical Richness to the Quality of ESL Learners’ Oral Narratives”. In: The Modern Language Journal 96.2 (2012), pp. 190–208. doi: 10.1111/j.1540-4781.2011.01232\_1.x. eprint: https: / / onlinelibrary.wiley.com / doi /pdf /10.1111 /j.1540 - 4781 . 2011 . 01232 _ 1 . x. url: https : / / onlinelibrary. wiley. com / doi / abs / 10 . 1111 / j . 1540 - 4781.2011.01232_1.x.
+[5] XIAOFEI LU. “The Relationship of Lexical Richness to the Quality of ESL Learners’ Oral Narratives”. In: The Modern Language Journal 96.2 (2012), pp. 190–208. doi: https://doi.org/10.1111/j.1540-4781.2011.01232_1.x
 
 [6] Menglin Xia, Ekaterina Kochmar, and Ted Briscoe. “Text Readability Assessment for Second Language Learners”. In: CoRR abs/1906.07580 (2019). arXiv: 1906.07580. url: http://arxiv.org/abs/1906.07580.
