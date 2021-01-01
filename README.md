@@ -88,3 +88,14 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## References
+[1] Paula Escudeiro and Nuno Escudeiro. “Evaluating Educational Games in Mobile Platforms”.
+In: Int. J. Mob. Learn. Organ. 7.1 (Jan. 2013), pp. 14–28. issn: 1746-725X. doi: 10.1504/IJMLO.
+2013.051571. url: https://doi.org/10.1504/IJMLO.2013.051571. 
+[2] Anders Johannsen, Dirk Hovy, and Anders Søgaard. “Cross-lingual syntactic variation over
+age and gender”. In: Proceedings of the nineteenth conference on computational natural language learning. 2015, pp. 103–112.
+[3] Gerold Lehmann Hans Martin & Schneider. “BNC Dependency Bank 1.0”. In: Oksefjell, S., Ebeling, J. & Hasselgard, H. (Eds.), Aspects of corpus linguistics: compilation, annotation, analysis. Helsinki: Research Unit for Variation, Contacts, and Change in English (2012).
+[4] Kristin Lemhöfer and Mirjam Broersma. “Introducing LexTALE: A quick and valid Lexical Test for Advanced Learners of English”. In: Behavior research methods 44 (June 2012), pp. 325–343. doi: https://doi.org/10.3758/s13428-011-0146-0.
+[6] XIAOFEI LU. “The Relationship of Lexical Richness to the Quality of ESL Learners’ Oral Narratives”. In: The Modern Language Journal 96.2 (2012), pp. 190–208. doi: 10.1111/j.1540-4781.2011.01232\_1.x. eprint: https: / / onlinelibrary.wiley.com / doi /pdf /10.1111 /j.1540 - 4781 . 2011 . 01232 _ 1 . x. url: https : / / onlinelibrary. wiley. com / doi / abs / 10 . 1111 / j . 1540 - 4781.2011.01232_1.x.
+[7] Menglin Xia, Ekaterina Kochmar, and Ted Briscoe. “Text Readability Assessment for Second Language Learners”. In: CoRR abs/1906.07580 (2019). arXiv: 1906.07580. url: http://arxiv.org/abs/1906.07580.
