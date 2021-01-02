@@ -252,7 +252,7 @@ def search_text(update, context, genre):
         if row[2] == level:
             rows.append(row[0])
     if len(rows) == 0:
-        msg_error = "Oops, we don't have any matching text in our corpus yet..."
+        msg_error = "Oops, this genre doesn't have any text matching your level, yet..."
         context.bot.send_message(chat_id=update.effective_chat.id, text=msg_error)
         preferred_genre(update, context)
         return
@@ -393,7 +393,7 @@ def definition(update, context, word, index):
             else:
                 definition+= f'\n'
             if len(definition_df.iloc[index]['Example'])>0:
-                definition+= f'An example of this would be: \n'
+                definition+= f'Here is an example: \n'
                 if type(definition_df.iloc[index]['Example'])==list:
                     definition+= '__'+definition_df.iloc[index]['Example'][0]+'__'
                 else:
@@ -408,7 +408,7 @@ def definition(update, context, word, index):
         tts.save(audio_name)
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_name, 'rb'))
         os.remove(audio_name)
-        msg += "This was the pronounciation.\n"
+        msg += "Listen to the pronunciation, above!\n"
     except:
         msg+= "Pronunciation not found.\n"
 
